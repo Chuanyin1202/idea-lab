@@ -28,20 +28,24 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Setup Gmail OAuth credentials
+        env:
+          GMAIL_TOKEN_JSON: ${{ secrets.GMAIL_TOKEN_JSON }}
+        run: |
+          # Gmail token 將由環境變數處理，不需要寫入檔案
+          echo "✅ Gmail OAuth credentials configured"
+
       - name: Run ingest script
         env:
           # OpenAI API Key
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-          # Gmail API - 方案 1: Service Account JSON (Base64 編碼)
-          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-
-          # Gmail API - 方案 2: Service Account 檔案路徑（如果使用檔案上傳）
-          # GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          # Gmail OAuth Token (Base64 編碼)
+          GMAIL_TOKEN_JSON: ${{ secrets.GMAIL_TOKEN_JSON }}
 
         run: |
           cd ${{ github.workspace }}
-          python scripts/ingest_idea.py
+          python scripts/ingest_idea.py --env
 
       - name: Commit and push if changed
         run: |
@@ -74,5 +78,6 @@ jobs:
           echo "❌ Workflow 執行失敗"
           echo "請檢查："
           echo "  1. OPENAI_API_KEY 是否正確"
-          echo "  2. GOOGLE_SERVICE_ACCOUNT_JSON 是否正確"
+          echo "  2. GMAIL_TOKEN_JSON 是否正確"
           echo "  3. Gmail API 權限是否足夠"
+          echo "  4. Token 是否過期（需要重新授權）"

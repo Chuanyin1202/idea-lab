@@ -5,6 +5,8 @@ IdeaBrowser Idea Ingestion Script
 從 Gmail API 抓取 IdeaBrowser 每日信件，
 使用 OpenAI gpt-4o-mini 生成 PRD，
 並寫入 ideas/ 目錄。
+
+使用 OAuth 2.0 認證。
 """
 
 import os
@@ -13,14 +15,18 @@ import re
 import sys
 import time
 import base64
+import argparse
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
+from pathlib import Path
 
 # 需要安裝的套件：
 # pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai
 
 try:
-    from google.oauth2 import service_account
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
     from googleapiclient.discovery import build
     from googleapiclient.errors import HttpError
     import openai
@@ -35,6 +41,12 @@ except ImportError as e:
 GMAIL_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 IDEABROWSER_FROM = 'ideas@ideabrowser.com'  # 請根據實際寄件者調整
 IDEABROWSER_SUBJECT = 'Idea of the Day'      # 請根據實際主旨調整
+
+# 檔案路徑
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+CREDENTIALS_FILE = PROJECT_ROOT / 'credentials.json'
+TOKEN_FILE = PROJECT_ROOT / 'token.json'
 
 # OpenAI 設定
 OPENAI_MODEL = 'gpt-4o-mini'
@@ -71,54 +83,121 @@ def log(msg: str):
     print(f"[{timestamp}] {msg}")
 
 
-# ==================== Gmail API ====================
+# ==================== OAuth 2.0 認證 ====================
 
-def get_gmail_service():
+def get_credentials(force_reauth: bool = False) -> Credentials:
     """
-    建立 Gmail API service
+    取得 Gmail API credentials
 
-    需要環境變數：
-    - GOOGLE_APPLICATION_CREDENTIALS: Service Account JSON 檔案路徑
-    或
-    - GOOGLE_SERVICE_ACCOUNT_JSON: Service Account JSON 內容（Base64 編碼）
+    Args:
+        force_reauth: 強制重新授權
+
+    Returns:
+        Google OAuth 2.0 credentials
     """
     creds = None
 
-    # 方案 1: 從檔案讀取
-    creds_file = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-    if creds_file and os.path.exists(creds_file):
-        creds = service_account.Credentials.from_service_account_file(
-            creds_file, scopes=GMAIL_SCOPES
-        )
-        log(f"✅ 從檔案載入 Service Account: {creds_file}")
-
-    # 方案 2: 從環境變數讀取 JSON（適合 GitHub Actions）
-    elif os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON'):
+    # 嘗試從 token.json 載入
+    if TOKEN_FILE.exists() and not force_reauth:
         try:
-            json_str = base64.b64decode(os.getenv('GOOGLE_SERVICE_ACCOUNT_JSON')).decode('utf-8')
-            info = json.loads(json_str)
-            creds = service_account.Credentials.from_service_account_info(
-                info, scopes=GMAIL_SCOPES
-            )
-            log("✅ 從環境變數載入 Service Account")
+            creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), GMAIL_SCOPES)
+            log(f"✅ 從 token.json 載入憑證")
         except Exception as e:
-            log(f"❌ 解析 GOOGLE_SERVICE_ACCOUNT_JSON 失敗: {e}")
-            raise
+            log(f"⚠️  載入 token.json 失敗: {e}")
+            creds = None
 
-    else:
-        log("❌ 找不到 Google Service Account 認證")
-        log("請設定環境變數：")
-        log("  - GOOGLE_APPLICATION_CREDENTIALS (檔案路徑)")
-        log("  - GOOGLE_SERVICE_ACCOUNT_JSON (Base64 編碼的 JSON)")
+    # 如果憑證不存在或失效，嘗試更新
+    if creds and creds.expired and creds.refresh_token:
+        try:
+            log("🔄 Token 已過期，嘗試更新...")
+            creds.refresh(Request())
+            log("✅ Token 更新成功")
+        except Exception as e:
+            log(f"❌ Token 更新失敗: {e}")
+            creds = None
+
+    # 如果仍無有效憑證，執行 OAuth flow
+    if not creds or not creds.valid:
+        if not CREDENTIALS_FILE.exists():
+            log(f"❌ 找不到 credentials.json: {CREDENTIALS_FILE}")
+            log("請先設定 OAuth 2.0 憑證")
+            sys.exit(1)
+
+        try:
+            log("🔐 啟動 OAuth 2.0 授權流程...")
+            flow = InstalledAppFlow.from_client_secrets_file(
+                str(CREDENTIALS_FILE), GMAIL_SCOPES
+            )
+
+            # 嘗試使用本機伺服器（適合桌面環境）
+            try:
+                creds = flow.run_local_server(port=0)
+                log("✅ 授權成功（本機伺服器模式）")
+            except Exception as e:
+                # 如果失敗，使用 console 模式（適合無頭環境）
+                log(f"⚠️  本機伺服器模式失敗: {e}")
+                log("🔄 切換到 console 模式...")
+                creds = flow.run_console()
+                log("✅ 授權成功（console 模式）")
+
+        except Exception as e:
+            log(f"❌ OAuth 授權失敗: {e}")
+            sys.exit(1)
+
+        # 儲存 token 供下次使用
+        try:
+            with open(TOKEN_FILE, 'w') as token:
+                token.write(creds.to_json())
+            log(f"✅ Token 已儲存到: {TOKEN_FILE}")
+        except Exception as e:
+            log(f"⚠️  無法儲存 token: {e}")
+
+    return creds
+
+
+def load_credentials_from_env() -> Credentials:
+    """
+    從環境變數載入憑證（適合 GitHub Actions）
+
+    環境變數：
+    - GMAIL_TOKEN_JSON: token.json 的 Base64 編碼內容
+    """
+    token_b64 = os.getenv('GMAIL_TOKEN_JSON')
+
+    if not token_b64:
+        log("❌ 找不到環境變數 GMAIL_TOKEN_JSON")
+        log("請在 GitHub Secrets 中設定此變數")
         sys.exit(1)
 
-    # 如果需要 domain-wide delegation，加上這行：
-    # delegated_email = 'your-email@gmail.com'
-    # creds = creds.with_subject(delegated_email)
+    try:
+        token_json = base64.b64decode(token_b64).decode('utf-8')
+        token_data = json.loads(token_json)
+        creds = Credentials.from_authorized_user_info(token_data, GMAIL_SCOPES)
+        log("✅ 從環境變數載入憑證")
+        return creds
+    except Exception as e:
+        log(f"❌ 解析環境變數憑證失敗: {e}")
+        sys.exit(1)
+
+
+def get_gmail_service(use_env: bool = False, force_reauth: bool = False):
+    """
+    建立 Gmail API service
+
+    Args:
+        use_env: 是否從環境變數讀取（GitHub Actions 模式）
+        force_reauth: 強制重新授權
+    """
+    if use_env:
+        creds = load_credentials_from_env()
+    else:
+        creds = get_credentials(force_reauth)
 
     service = build('gmail', 'v1', credentials=creds)
     return service
 
+
+# ==================== Gmail API 搜尋 ====================
 
 def search_ideabrowser_email(service, days_ago: int = 1) -> Optional[Dict[str, Any]]:
     """
@@ -431,14 +510,33 @@ def update_summary(meta: Dict[str, Any], idea_path: str):
 
 def main():
     """主流程"""
+    parser = argparse.ArgumentParser(description='IdeaBrowser Idea Ingestion Script')
+    parser.add_argument('--auth', action='store_true', help='執行 OAuth 授權流程')
+    parser.add_argument('--reauth', action='store_true', help='強制重新授權')
+    parser.add_argument('--env', action='store_true', help='從環境變數讀取憑證（GitHub Actions 模式）')
+    args = parser.parse_args()
+
     log("=" * 60)
     log("🚀 IdeaBrowser Idea Ingestion Script")
     log("=" * 60)
 
+    # 如果只是授權，執行後結束
+    if args.auth or args.reauth:
+        log("\n🔐 執行 OAuth 2.0 授權...")
+        try:
+            get_credentials(force_reauth=True)
+            log("\n✅ 授權完成！")
+            log(f"Token 已儲存到: {TOKEN_FILE}")
+            log("\n下次執行時將自動使用此 token")
+        except Exception as e:
+            log(f"\n❌ 授權失敗: {e}")
+            sys.exit(1)
+        return
+
     # 1. 連接 Gmail API
     log("\n📬 Step 1: 連接 Gmail API")
     try:
-        gmail_service = get_gmail_service()
+        gmail_service = get_gmail_service(use_env=args.env)
     except Exception as e:
         log(f"❌ 無法建立 Gmail service: {e}")
         sys.exit(1)

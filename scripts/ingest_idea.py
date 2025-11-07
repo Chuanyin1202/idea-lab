@@ -20,8 +20,15 @@ from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 from pathlib import Path
 
+# 載入環境變數（從 .env 檔案）
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # 自動載入專案根目錄的 .env 檔案
+except ImportError:
+    pass  # 如果沒有安裝 python-dotenv，繼續執行（使用系統環境變數）
+
 # 需要安裝的套件：
-# pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai
+# pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai python-dotenv
 
 try:
     from google.auth.transport.requests import Request

@@ -1,9 +1,9 @@
 name: Ingest IdeaBrowser Idea
 
 on:
-  # 每日 UTC 02:00 執行（台灣時間 10:00）
+  # 每日 UTC 13:30 執行（台灣時間 21:30）
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "30 13 * * *"
 
   # 支援手動觸發（測試用）
   workflow_dispatch:

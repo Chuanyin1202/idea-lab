@@ -46,8 +46,8 @@ except ImportError as e:
 # ==================== 設定 ====================
 
 GMAIL_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
-IDEABROWSER_FROM = 'ideas@ideabrowser.com'  # 請根據實際寄件者調整
-IDEABROWSER_SUBJECT = 'Idea of the Day'      # 請根據實際主旨調整
+IDEABROWSER_FROM = 'notifications@mail.ideabrowser.com'
+IDEABROWSER_SUBJECT = 'Idea of the Day'
 
 # 檔案路徑
 SCRIPT_DIR = Path(__file__).parent

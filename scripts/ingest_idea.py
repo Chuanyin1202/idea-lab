@@ -410,10 +410,22 @@ def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]
 def extract_metadata_from_content(content: str, email_data: Dict[str, Any]) -> Dict[str, Any]:
     """從信件內容和 PRD 中提取 metadata"""
 
-    # 從 PRD 第一行提取產品名稱
-    first_line = content.split('\n')[0]
-    title_match = re.search(r'#\s*(.+)', first_line)
-    title = title_match.group(1).strip() if title_match else "Untitled Idea"
+    # 從 PRD 中提取產品名稱
+    title = "Untitled Idea"
+
+    # 方法 1：從 "## 產品名稱" 區塊提取
+    product_name_match = re.search(r'##\s*產品名稱\s*\n\s*(.+)', content, re.MULTILINE)
+    if product_name_match:
+        title = product_name_match.group(1).strip()
+    else:
+        # 方法 2：從第一行提取（回退方案）
+        first_line = content.split('\n')[0]
+        title_match = re.search(r'#\s*(.+)', first_line)
+        if title_match:
+            title = title_match.group(1).strip()
+            # 排除通用標題
+            if title in ['產品需求文件 (PRD)', 'PRD', 'Product Requirements Document']:
+                title = "Untitled Idea"
 
     # 嘗試從內容中提取分類和標籤（簡單版本）
     category = "general"

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -11,9 +13,17 @@ export default function Home() {
             <p className="text-2xl text-purple-200 mb-8">
               為電競賽事主辦方打造的一站式管理平台
             </p>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              自動產生對戰表、更新晉級結果，並透過 Discord / Email 自動通知選手與工作人員
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-12">
+              自動產生對戰表、更新晉級結果，10 分鐘快速建立專業賽事
             </p>
+
+            {/* CTA Button */}
+            <Link
+              href="/create"
+              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              🚀 立即建立賽事
+            </Link>
           </div>
 
           {/* Features Grid */}
@@ -29,26 +39,39 @@ export default function Home() {
               description="後台輸入比分，自動計算晉級名單"
             />
             <FeatureCard
-              icon="🔔"
-              title="自動通知"
-              description="Discord Bot / Email 自動通知選手"
+              icon="🏆"
+              title="單/雙淘汰賽制"
+              description="支援多種常見賽制，自動排程"
             />
             <FeatureCard
               icon="🎨"
-              title="公開賽事頁"
-              description="美觀的賽事頁面，支援嵌入 Twitch 直播"
+              title="美觀對戰表"
+              description="專業的視覺化對戰樹狀圖"
             />
           </div>
 
-          {/* Status Badge */}
-          <div className="inline-block bg-green-500/20 border border-green-500/50 rounded-full px-6 py-3 mb-4">
-            <p className="text-green-200 font-medium">
-              ✅ 已部署 - 自動化測試中
-            </p>
+          {/* Demo Section */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">MVP 功能展示</h3>
+            <div className="text-left text-slate-300 space-y-2">
+              <div className="flex items-center gap-3">
+                <span className="text-green-400">✓</span>
+                <span>賽事建立表單</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-green-400">✓</span>
+                <span>單淘汰賽對戰表自動生成</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-green-400">✓</span>
+                <span>比賽結果更新與晉級計算</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-green-400">✓</span>
+                <span>即時對戰表視覺化</span>
+              </div>
+            </div>
           </div>
-          <p className="text-sm text-slate-400 mt-4">
-            每次 push 程式碼都會自動部署到 Vercel 🚀
-          </p>
 
           {/* Tech Stack */}
           <div className="mt-16 pt-16 border-t border-slate-700">

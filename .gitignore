@@ -14,6 +14,9 @@ build/
 # 敏感資訊
 *.json
 !meta.json
+!projects/**/package.json
+!projects/**/tsconfig.json
+!projects/**/*.config.json
 credentials.json
 token.json
 .env

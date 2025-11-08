@@ -1,0 +1,75 @@
+name: Deploy Projects to Vercel
+
+on:
+  push:
+    branches:
+      - main
+      - claude/*
+    paths:
+      - 'projects/**'
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Project to deploy (leave empty for all changed)'
+        required: false
+        type: string
+
+jobs:
+  deploy-tourneyflow:
+    name: Deploy TourneyFlow
+    runs-on: ubuntu-latest
+    # 只有當 tourneyflow 目錄有變更時才執行
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.modified, 'projects/tourneyflow/') ||
+      contains(github.event.head_commit.added, 'projects/tourneyflow/') ||
+      github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel Environment Information
+        working-directory: projects/tourneyflow
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project
+        working-directory: projects/tourneyflow
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Vercel
+        working-directory: projects/tourneyflow
+        run: |
+          URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
+          echo "Deployment URL: $URL"
+          echo "DEPLOYMENT_URL=$URL" >> $GITHUB_ENV
+
+      - name: Comment deployment URL (if PR)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 TourneyFlow deployed to: ${{ env.DEPLOYMENT_URL }}`
+            })
+
+      - name: Deployment Summary
+        run: |
+          echo "### 🚀 Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Project:** TourneyFlow" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** ${{ env.DEPLOYMENT_URL }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📱 手機掃描 QR code 或直接訪問上方 URL" >> $GITHUB_STEP_SUMMARY

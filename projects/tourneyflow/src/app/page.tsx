@@ -41,11 +41,14 @@ export default function Home() {
           </div>
 
           {/* Status Badge */}
-          <div className="inline-block bg-purple-500/20 border border-purple-500/50 rounded-full px-6 py-3">
-            <p className="text-purple-200 font-medium">
-              🚧 MVP 開發中 - Coming Soon
+          <div className="inline-block bg-green-500/20 border border-green-500/50 rounded-full px-6 py-3 mb-4">
+            <p className="text-green-200 font-medium">
+              ✅ 已部署 - 自動化測試中
             </p>
           </div>
+          <p className="text-sm text-slate-400 mt-4">
+            每次 push 程式碼都會自動部署到 Vercel 🚀
+          </p>
 
           {/* Tech Stack */}
           <div className="mt-16 pt-16 border-t border-slate-700">

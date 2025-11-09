@@ -16,7 +16,7 @@ import sys
 import time
 import base64
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 from pathlib import Path
 
@@ -46,6 +46,9 @@ except ImportError as e:
 
 
 # ==================== 設定 ====================
+
+# 時區設定
+TZ_TAIPEI = timezone(timedelta(hours=8))
 
 GMAIL_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 IDEABROWSER_FROM = 'notifications@mail.ideabrowser.com'
@@ -77,8 +80,8 @@ def slugify(text: str) -> str:
 
 
 def today_str() -> str:
-    """取得今天日期字串 (YYYY-MM-DD)"""
-    return datetime.utcnow().strftime("%Y-%m-%d")
+    """取得今天日期字串 (YYYY-MM-DD, 台灣時區)"""
+    return datetime.now(TZ_TAIPEI).strftime("%Y-%m-%d")
 
 
 def ensure_dir(path: str):
@@ -220,8 +223,8 @@ def search_ideabrowser_email(service, days_ago: int = 1) -> Optional[Dict[str, A
         信件內容 dict 或 None
     """
     try:
-        # 建立搜尋條件
-        after_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y/%m/%d")
+        # 建立搜尋條件（使用台灣時區）
+        after_date = (datetime.now(TZ_TAIPEI) - timedelta(days=days_ago)).strftime("%Y/%m/%d")
         query = f'from:{IDEABROWSER_FROM} subject:"{IDEABROWSER_SUBJECT}" after:{after_date}'
 
         log(f"🔍 搜尋條件: {query}")
@@ -410,9 +413,18 @@ def generate_prd_with_openai(email_summary: str, full_analysis: Optional[str] = 
 
 請根據以下創業點子，撰寫一份完整的產品需求文件（PRD）。
 
-**輸出格式**: 純 Markdown
+**輸出格式**: Markdown with YAML Frontmatter
 
-**必須包含的章節**:
+**必須的 YAML Frontmatter** (放在文件最前面):
+```yaml
+---
+title: [產品名稱，英文，簡短]
+category: [單一分類，例如: ai, fintech, healthtech, edtech, marketplace, saas, productivity, social, entertainment, hardware, logistics 等]
+tags: [2-5個標籤，描述產品屬性，例如: ai, automation, b2b, mobile, analytics]
+---
+```
+
+**必須包含的 Markdown 章節**:
 1. 產品名稱
 2. One-line Pitch
 3. Background & Problem Statement
@@ -428,18 +440,19 @@ def generate_prd_with_openai(email_summary: str, full_analysis: Optional[str] = 
 13. Risks & Assumptions
 
 **注意事項**:
-- 使用繁體中文撰寫
+- 使用繁體中文撰寫內容（但 frontmatter 用英文）
 - 內容具體、可執行
 - MVP Scope 要明確區分 Must-have 和 Nice-to-have
 - System Architecture 要包含技術棧建議
 - 如果提供了完整分析，請充分利用其中的市場洞察、競品分析、技術建議等資訊
+- category 和 tags 要準確反映產品的核心屬性
 
 ---
 
 **Idea 內容**:
 {idea_content}
 
-請開始撰寫 PRD:
+請開始撰寫 PRD (記得以 YAML frontmatter 開頭):
 """
 
     try:
@@ -486,40 +499,62 @@ def generate_prd_with_openai(email_summary: str, full_analysis: Optional[str] = 
 # ==================== 檔案操作 ====================
 
 def extract_metadata_from_content(content: str, email_data: Dict[str, Any]) -> Dict[str, Any]:
-    """從信件內容和 PRD 中提取 metadata"""
+    """從 PRD 內容中提取 metadata (優先解析 YAML frontmatter)"""
 
-    # 從 PRD 中提取產品名稱
     title = "Untitled Idea"
+    category = "general"
+    tags = ["mvp"]
 
-    # 方法 1：從 "## 產品名稱" 區塊提取
-    product_name_match = re.search(r'##\s*產品名稱\s*\n\s*(.+)', content, re.MULTILINE)
-    if product_name_match:
-        title = product_name_match.group(1).strip()
-    else:
-        # 方法 2：從第一行提取（回退方案）
-        first_line = content.split('\n')[0]
-        title_match = re.search(r'#\s*(.+)', first_line)
+    # 嘗試解析 YAML frontmatter
+    frontmatter_match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+
+    if frontmatter_match:
+        # 找到 frontmatter，解析它
+        frontmatter = frontmatter_match.group(1)
+
+        # 提取 title
+        title_match = re.search(r'^title:\s*(.+)$', frontmatter, re.MULTILINE)
         if title_match:
             title = title_match.group(1).strip()
-            # 排除通用標題
-            if title in ['產品需求文件 (PRD)', 'PRD', 'Product Requirements Document']:
-                title = "Untitled Idea"
 
-    # 嘗試從內容中提取分類和標籤（簡單版本）
-    category = "general"
-    tags = ["mvp", "saas"]
+        # 提取 category
+        category_match = re.search(r'^category:\s*(.+)$', frontmatter, re.MULTILINE)
+        if category_match:
+            category = category_match.group(1).strip()
 
-    # 可以根據內容關鍵字自動分類
-    content_lower = content.lower()
-    if any(word in content_lower for word in ['esports', 'gaming', 'tournament']):
-        category = "esports"
-        tags.append("gaming")
-    elif any(word in content_lower for word in ['ai', 'machine learning', 'llm']):
-        category = "ai"
-        tags.append("ai")
-    elif any(word in content_lower for word in ['saas', 'platform', 'tool']):
-        category = "saas"
-        tags.append("automation")
+        # 提取 tags (支援 [tag1, tag2] 或 YAML list 格式)
+        tags_match = re.search(r'^tags:\s*\[([^\]]+)\]', frontmatter, re.MULTILINE)
+        if tags_match:
+            tags_str = tags_match.group(1)
+            tags = [t.strip().strip('"').strip("'") for t in tags_str.split(',')]
+        else:
+            # 嘗試 YAML list 格式
+            tags_list = re.findall(r'^\s*-\s*(.+)$', frontmatter, re.MULTILINE)
+            if tags_list:
+                tags = [t.strip() for t in tags_list]
+
+        log(f"📋 從 frontmatter 解析 metadata: title={title}, category={category}, tags={tags}")
+
+    else:
+        # 沒有 frontmatter，退回舊邏輯
+        log("⚠️  未找到 YAML frontmatter，使用舊邏輯提取 metadata")
+
+        # 從 "## 產品名稱" 區塊提取
+        product_name_match = re.search(r'##\s*產品名稱\s*\n\s*(.+)', content, re.MULTILINE)
+        if product_name_match:
+            title = product_name_match.group(1).strip()
+        else:
+            # 從第一行提取（回退方案）
+            first_line = content.split('\n')[0]
+            title_match = re.search(r'#\s*(.+)', first_line)
+            if title_match:
+                title = title_match.group(1).strip()
+                if title in ['產品需求文件 (PRD)', 'PRD', 'Product Requirements Document']:
+                    title = "Untitled Idea"
+
+        # 簡單分類（保持向後兼容）
+        category = "general"
+        tags = ["mvp", "general"]
 
     return {
         "date": today_str(),
@@ -630,6 +665,21 @@ def main():
             sys.exit(1)
         return
 
+    # 0. 檢查今天是否已經處理過（避免浪費 API 呼叫）
+    log("\n🔍 Step 0: 檢查今天是否已處理")
+    today = today_str()
+    ideas_dir = PROJECT_ROOT / "ideas"
+
+    if ideas_dir.exists():
+        existing = [d for d in ideas_dir.iterdir()
+                   if d.is_dir() and d.name.startswith(today + "-")]
+        if existing:
+            log(f"✅ 今天已處理過: {existing[0].name}")
+            log("   如需重新執行，請先刪除該資料夾")
+            sys.exit(0)
+
+    log("   未發現重複，繼續執行")
+
     # 1. 連接 Gmail API
     log("\n📬 Step 1: 連接 Gmail API")
     try:
@@ -639,7 +689,7 @@ def main():
         sys.exit(1)
 
     # 2. 搜尋今天的信件
-    log("\n🔍 Step 2: 搜尋 IdeaBrowser 信件")
+    log("\n📧 Step 2: 搜尋 IdeaBrowser 信件")
     email_data = None
 
     # 嘗試搜尋今天和昨天的信件（處理時區問題）

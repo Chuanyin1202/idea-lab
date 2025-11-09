@@ -5,11 +5,13 @@
 ## 🎯 核心概念
 
 ```
-IdeaBrowser 每日信件
+IdeaBrowser 每日信件（trigger）
     ↓ (Gmail API)
+抓取 IdeaBrowser 首頁完整內容
+    ↓ (BeautifulSoup)
 OpenAI gpt-4o-mini 生成 PRD
     ↓
-存入 ideas/ 目錄
+自動 commit & push 到 GitHub
     ↓
 人類挑選喜歡的點子
     ↓
@@ -35,44 +37,48 @@ idea-lab/
 
 ## 🚀 快速開始
 
-### 1. 設定 Gmail API
+### 1. 設定 Gmail API (OAuth 2.0)
 
 #### 步驟 1: 建立 Google Cloud Project
 
 1. 前往 [Google Cloud Console](https://console.cloud.google.com/)
 2. 建立新專案（或使用現有專案）
-3. 啟用 **Gmail API**
+3. 啟用 **Gmail API**：
+   - 在左側選單選擇「API 和服務」>「資料庫」
+   - 搜尋「Gmail API」並啟用
 
-#### 步驟 2: 建立 Service Account
+#### 步驟 2: 建立 OAuth 2.0 憑證
 
-1. 前往 **IAM & Admin** > **Service Accounts**
-2. 點擊 **Create Service Account**
-3. 填寫名稱，例如：`ideabrowser-reader`
-4. 點擊 **Create and Continue**
-5. 不需要設定角色，直接點擊 **Done**
+1. 前往 **API 和服務** > **憑證**
+2. 點擊 **建立憑證** > **OAuth 用戶端 ID**
+3. 如果是第一次，需要先設定「OAuth 同意畫面」：
+   - 選擇「外部」（個人帳號）或「內部」（企業帳號）
+   - 填寫應用程式名稱（例如：Idea Lab）
+   - 加入測試使用者（填入你的 Gmail）
+4. 回到「憑證」頁面，建立 OAuth 用戶端 ID：
+   - 應用程式類型：**電腦版應用程式**
+   - 名稱：`idea-lab` 或任意名稱
+5. 下載 JSON 檔案，重新命名為 `credentials.json`
+6. 將 `credentials.json` 放到專案根目錄（**不要上傳到 Git**）
 
-#### 步驟 3: 建立金鑰
+#### 步驟 3: 本機授權取得 Token
 
-1. 點擊剛建立的 Service Account
-2. 前往 **Keys** 頁籤
-3. 點擊 **Add Key** > **Create new key**
-4. 選擇 **JSON** 格式
-5. 下載 JSON 檔案（妥善保管，不要上傳到 Git）
+```bash
+# 1. 建立虛擬環境
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-#### 步驟 4: 設定 Domain-Wide Delegation（如果使用企業 Google Workspace）
+# 2. 安裝依賴
+pip install -r requirements.txt
 
-如果你的 Gmail 是企業帳號，需要設定 Domain-Wide Delegation：
+# 3. 執行授權流程
+python scripts/ingest_idea.py --auth
+```
 
-1. 在 Service Account 詳細頁面，啟用 **Enable Google Workspace Domain-wide Delegation**
-2. 記下 **Client ID**
-3. 前往 [Google Workspace Admin](https://admin.google.com/)
-4. **Security** > **API Controls** > **Domain-wide Delegation**
-5. 新增 Client ID，設定 OAuth Scopes：
-   ```
-   https://www.googleapis.com/auth/gmail.readonly
-   ```
-
-**個人 Gmail 帳號**可以跳過此步驟，直接使用 OAuth 2.0 登入。
+瀏覽器會自動開啟 Google 授權頁面：
+- 登入你的 Gmail 帳號
+- 允許存取（readonly 權限）
+- 授權成功後會產生 `token.json`
 
 ### 2. 設定 GitHub Secrets
 
@@ -83,73 +89,63 @@ idea-lab/
 | Secret 名稱 | 說明 | 如何取得 |
 |------------|------|---------|
 | `OPENAI_API_KEY` | OpenAI API 金鑰 | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) |
-| `GOOGLE_SERVICE_ACCOUNT_JSON` | Service Account JSON (Base64) | 見下方說明 |
+| `GMAIL_TOKEN_JSON` | Gmail OAuth Token (Base64) | 見下方說明 |
 
-#### 產生 `GOOGLE_SERVICE_ACCOUNT_JSON`
+#### 產生 `GMAIL_TOKEN_JSON`
 
-在本機執行：
+完成步驟 1-3 授權後，專案根目錄會有 `token.json`。在本機執行：
 
 ```bash
 # macOS / Linux
-base64 -i path/to/service-account.json | pbcopy
+base64 -i token.json | pbcopy
 
-# 或直接輸出到檔案
-base64 -i path/to/service-account.json > encoded.txt
+# 或直接輸出
+base64 -i token.json > encoded.txt
 ```
 
-將 Base64 編碼後的內容貼到 GitHub Secret。
+將 Base64 編碼後的內容貼到 GitHub Secret `GMAIL_TOKEN_JSON`。
 
-### 3. 調整信件搜尋條件
-
-編輯 `scripts/ingest_idea.py`，修改以下變數：
-
-```python
-IDEABROWSER_FROM = 'ideas@ideabrowser.com'  # 寄件者 email
-IDEABROWSER_SUBJECT = 'Idea of the Day'      # 信件主旨
-```
-
-根據你實際收到的 IdeaBrowser 信件調整。
-
-### 4. 測試執行
+### 3. 測試執行
 
 #### 本機測試
 
 ```bash
-# 1. 建立虛擬環境
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+# 確保已授權（有 token.json）
+source venv/bin/activate
 
-# 2. 安裝依賴
-pip install -r requirements.txt
-
-# 3. 設定環境變數
+# 設定 OpenAI API Key
 export OPENAI_API_KEY="sk-..."
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/service-account.json"
 
-# 4. 執行腳本
+# 執行腳本
 python scripts/ingest_idea.py
 ```
+
+如果成功，會在 `ideas/` 目錄生成今天的 PRD。
 
 #### GitHub Actions 測試
 
 1. 前往 repo 的 **Actions** 頁面
 2. 選擇 **Ingest IdeaBrowser Idea** workflow
-3. 點擊 **Run workflow**
-4. 查看執行結果
+3. 點擊 **Run workflow** > **Run workflow**
+4. 查看執行結果（約 30 秒完成）
 
-### 5. 啟用自動執行
+### 4. 啟用自動執行
 
-預設每日 UTC 02:00（台灣時間 10:00）自動執行。
+預設每日 **UTC 13:30**（台灣時間 **21:30**）自動執行。
 
 如需調整時間，編輯 `.github/workflows/ingest_idea.yml`：
 
 ```yaml
 on:
   schedule:
-    - cron: "0 2 * * *"  # 修改這裡
+    - cron: "30 13 * * *"  # 修改這裡
 ```
 
-Cron 格式：`分 時 日 月 星期`
+Cron 格式：`分 時 日 月 星期`（UTC 時間）
+
+**時區換算**：
+- 台灣時間 21:30 = UTC 13:30
+- 台灣時間 09:00 = UTC 01:00
 
 ## 📖 使用流程
 
@@ -207,17 +203,36 @@ claude "根據 ../../ideas/2025-11-07-esports-tourneyflow/PRD.md 建立 Next.js 
 - **觸發方式**: GitHub Actions (Cron Schedule)
 - **執行環境**: Ubuntu Latest
 - **Python 版本**: 3.11
+- **排程時間**: UTC 13:30（台灣時間 21:30）
+
+### 工作流程
+
+1. **檢查重複**: 檢查今天是否已處理過（避免浪費 API）
+2. **Email Trigger**: 搜尋 IdeaBrowser 每日信件（作為觸發信號）
+3. **抓取首頁**: 使用 BeautifulSoup 抓取 https://www.ideabrowser.com/ 完整內容
+4. **生成 PRD**: OpenAI 閱讀完整內容後生成 PRD（包含自動分類）
+5. **寫入檔案**: 儲存 PRD.md 和 meta.json
+6. **Git 操作**: 自動 commit 並 push 到 GitHub
 
 ### Gmail API
 
-- **認證方式**: Service Account with OAuth 2.0
+- **認證方式**: OAuth 2.0 (Desktop App)
 - **權限**: `gmail.readonly`
+- **時區**: 台灣時區 (UTC+8)
 - **搜尋條件**:
   ```python
-  from:{IDEABROWSER_FROM}
-  subject:"{IDEABROWSER_SUBJECT}"
-  after:{yesterday}
+  from:notifications@mail.ideabrowser.com
+  subject:"Idea of the Day"
+  after:2025/11/09
   ```
+
+### 網頁抓取
+
+- **工具**: BeautifulSoup + lxml
+- **目標**: https://www.ideabrowser.com/
+- **選擇器**: `#main-wrapper`, `#first-section`, `<article>`, `<main>`
+- **清理**: 移除 script, style, nav, footer, header
+- **平均長度**: 6000+ 字元
 
 ### OpenAI API
 
@@ -225,12 +240,15 @@ claude "根據 ../../ideas/2025-11-07-esports-tourneyflow/PRD.md 建立 Next.js 
 - **Temperature**: 0.4（保持一致性）
 - **Max Tokens**: 4000
 - **成本**: 約 $0.015/request，每月 < $1
+- **自動分類**: 要求在 YAML frontmatter 中輸出 category 和 tags
+- **語義理解**: OpenAI 閱讀完整內容後判斷，準確度遠高於關鍵字匹配
 
 ### 錯誤處理
 
-- Gmail API: 重試 3 次，間隔 5 秒
-- OpenAI API: 重試 2 次，間隔 5 秒
-- 失敗時輸出詳細錯誤訊息
+- **重複檢查**: 流程開始就檢查，避免浪費 API 呼叫
+- **OpenAI 重試**: 重試 2 次，間隔 5 秒
+- **網頁抓取失敗**: 退回使用 email 摘要
+- **詳細日誌**: 每個步驟都有時間戳記和狀態輸出
 
 ## 🔧 進階設定
 
@@ -243,19 +261,36 @@ prompt = f"""你是一位資深產品經理。
 
 請根據以下創業點子，撰寫一份完整的產品需求文件（PRD）。
 
-**你的自訂格式**...
+**輸出格式**: Markdown with YAML Frontmatter
+
+**必須的 YAML Frontmatter**:
+---
+title: [產品名稱]
+category: [分類]
+tags: [標籤1, 標籤2, ...]
+---
+
+**你的自訂 Markdown 章節**...
 """
 ```
 
-### 自動分類
+### 分類系統
 
-在 `extract_metadata_from_content()` 中新增分類邏輯：
+分類和標籤由 **OpenAI 自動判斷**（在生成 PRD 時一併輸出），不需要維護關鍵字列表。
 
-```python
-if any(word in content_lower for word in ['blockchain', 'web3', 'nft']):
-    category = "web3"
-    tags.append("blockchain")
-```
+**常見分類**：
+- `ai`, `fintech`, `healthtech`, `edtech`, `marketplace`
+- `saas`, `productivity`, `social`, `entertainment`, `hardware`
+- `logistics`, `real-estate`, `travel`, `food`, `fashion`
+
+**標籤範例**：
+- `ai`, `automation`, `b2b`, `b2c`, `mobile`
+- `analytics`, `marketing`, `design`, `developer-tools`
+
+優點：
+- ✅ 語義理解準確
+- ✅ 自動適應新分類
+- ✅ 零維護成本
 
 ### 新增通知
 
@@ -275,10 +310,11 @@ if any(word in content_lower for word in ['blockchain', 'web3', 'nft']):
 ### Q: Gmail API 一直失敗？
 
 **A**: 檢查：
-1. Service Account JSON 是否正確？
-2. Gmail API 是否已啟用？
-3. 如果是企業帳號，是否設定 Domain-Wide Delegation？
-4. 信件寄件者和主旨是否正確？
+1. `credentials.json` 是否存在且正確？
+2. 是否已執行 `--auth` 並產生 `token.json`？
+3. Gmail API 是否已啟用？
+4. GitHub Secret `GMAIL_TOKEN_JSON` 是否正確設定（Base64 編碼）？
+5. Token 是否過期？（重新執行 `--auth`）
 
 ### Q: OpenAI API 超過額度？
 
@@ -289,21 +325,50 @@ if any(word in content_lower for word in ['blockchain', 'web3', 'nft']):
 
 ### Q: 想要手動新增 idea？
 
-**A**: 直接在 `ideas/` 建立目錄和檔案：
+**A**: 使用 YAML frontmatter 格式：
 
 ```bash
-mkdir -p ideas/2025-11-08-my-idea
-echo "# My Idea" > ideas/2025-11-08-my-idea/PRD.md
-echo '{"date": "2025-11-08", ...}' > ideas/2025-11-08-my-idea/meta.json
+mkdir -p ideas/2025-11-10-my-idea
+cat > ideas/2025-11-10-my-idea/PRD.md << 'EOF'
+---
+title: MyIdea
+category: productivity
+tags: [automation, mobile, mvp]
+---
+
+# 產品需求文件 (PRD)
+
+## 產品名稱
+MyIdea
+
+...
+EOF
+
+# 產生 meta.json
+echo '{
+  "date": "2025-11-10",
+  "title": "MyIdea",
+  "source": "manual",
+  "category": "productivity",
+  "tags": ["automation", "mobile", "mvp"],
+  "status": "new"
+}' > ideas/2025-11-10-my-idea/meta.json
 ```
+
+### Q: 分類不準確怎麼辦？
+
+**A**: OpenAI 判斷的分類很準確，但如果需要調整：
+1. 直接修改生成的 `PRD.md` frontmatter
+2. 同步修改 `meta.json` 中的 category 和 tags
+3. 或在 prompt 中加入更明確的分類指引
 
 ### Q: 能否支援其他來源（不只 IdeaBrowser）？
 
-**A**: 可以！修改 `scripts/ingest_idea.py` 中的 `search_ideabrowser_email()` 函式，改成：
-- RSS feed 解析
-- Twitter / X 爬蟲
-- Notion / Obsidian 筆記同步
-- 其他 email 來源
+**A**: 可以！修改觸發和內容來源：
+- **RSS feed**: 改用 feedparser 解析
+- **Twitter / X**: 使用 API 抓取特定帳號
+- **Notion / Obsidian**: 同步筆記資料庫
+- **其他 Newsletter**: 修改 email 搜尋條件
 
 ## 📚 相關資源
 

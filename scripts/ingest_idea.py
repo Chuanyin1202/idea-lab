@@ -340,8 +340,10 @@ def fetch_ideabrowser_daily_idea(timeout: int = 15) -> Optional[str]:
             script.decompose()
 
         # 提取主要內容
-        # 優先尋找 article、main 或 content 相關的 div
+        # IdeaBrowser 使用 id="main-wrapper" 或 id="first-section"
         main_content = (
+            soup.find('div', id='main-wrapper') or
+            soup.find('div', id='first-section') or
             soup.find('article') or
             soup.find('main') or
             soup.find('div', class_=re.compile(r'content|article|post|idea', re.I))

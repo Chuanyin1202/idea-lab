@@ -311,39 +311,20 @@ def extract_email_body(payload) -> str:
     return body.strip()
 
 
-def extract_url_from_email(email_body: str) -> Optional[str]:
+def fetch_ideabrowser_daily_idea(timeout: int = 15) -> Optional[str]:
     """
-    從 email body 中提取 IdeaBrowser 完整分析的 URL
+    直接抓取 IdeaBrowser 首頁的當天 featured idea
 
     Args:
-        email_body: email 內容
-
-    Returns:
-        URL 字串或 None
-    """
-    # 尋找 https://www.ideabrowser.com/idea/... 格式的 URL
-    url_pattern = r'https://www\.ideabrowser\.com/idea/[a-zA-Z0-9\-]+'
-
-    match = re.search(url_pattern, email_body)
-    if match:
-        return match.group(0)
-
-    return None
-
-
-def fetch_full_idea_analysis(url: str, timeout: int = 10) -> Optional[str]:
-    """
-    抓取 IdeaBrowser 網頁的完整分析內容
-
-    Args:
-        url: IdeaBrowser idea 頁面 URL
         timeout: 請求超時時間（秒）
 
     Returns:
-        網頁文字內容或 None
+        首頁完整內容或 None
     """
+    url = "https://www.ideabrowser.com/"
+
     try:
-        log(f"🌐 抓取完整分析: {url}")
+        log(f"🌐 抓取 IdeaBrowser 首頁: {url}")
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
@@ -363,7 +344,7 @@ def fetch_full_idea_analysis(url: str, timeout: int = 10) -> Optional[str]:
         main_content = (
             soup.find('article') or
             soup.find('main') or
-            soup.find('div', class_=re.compile(r'content|article|post', re.I))
+            soup.find('div', class_=re.compile(r'content|article|post|idea', re.I))
         )
 
         if main_content:
@@ -673,19 +654,12 @@ def main():
         log("  3. Gmail API 權限不足")
         sys.exit(0)  # 不算錯誤，只是沒有新 idea
 
-    # 3. 抓取完整分析（如果有 URL）
-    log("\n🌐 Step 3: 抓取完整分析")
-    full_analysis = None
-    url = extract_url_from_email(email_data['body'])
+    # 3. 抓取 IdeaBrowser 首頁的完整內容
+    log("\n🌐 Step 3: 抓取 IdeaBrowser 首頁")
+    full_analysis = fetch_ideabrowser_daily_idea()
 
-    if url:
-        log(f"   找到 URL: {url}")
-        full_analysis = fetch_full_idea_analysis(url)
-
-        if not full_analysis:
-            log("   ⚠️  網頁抓取失敗，將只使用 email 摘要")
-    else:
-        log("   ⚠️  Email 中沒有找到 URL，將只使用 email 摘要")
+    if not full_analysis:
+        log("   ⚠️  首頁抓取失敗，將只使用 email 摘要")
 
     # 4. 生成 PRD
     log("\n🤖 Step 4: 使用 OpenAI 生成 PRD")

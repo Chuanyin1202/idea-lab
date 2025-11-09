@@ -28,7 +28,7 @@ except ImportError:
     pass  # 如果沒有安裝 python-dotenv，繼續執行（使用系統環境變數）
 
 # 需要安裝的套件：
-# pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai python-dotenv
+# pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai python-dotenv requests beautifulsoup4 lxml
 
 try:
     from google.auth.transport.requests import Request
@@ -37,9 +37,11 @@ try:
     from googleapiclient.discovery import build
     from googleapiclient.errors import HttpError
     import openai
+    import requests
+    from bs4 import BeautifulSoup
 except ImportError as e:
     print(f"❌ 缺少必要套件: {e}")
-    print("請執行: pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client openai")
+    print("請執行: pip install -r requirements.txt")
     sys.exit(1)
 
 
@@ -309,14 +311,93 @@ def extract_email_body(payload) -> str:
     return body.strip()
 
 
+def extract_url_from_email(email_body: str) -> Optional[str]:
+    """
+    從 email body 中提取 IdeaBrowser 完整分析的 URL
+
+    Args:
+        email_body: email 內容
+
+    Returns:
+        URL 字串或 None
+    """
+    # 尋找 https://www.ideabrowser.com/idea/... 格式的 URL
+    url_pattern = r'https://www\.ideabrowser\.com/idea/[a-zA-Z0-9\-]+'
+
+    match = re.search(url_pattern, email_body)
+    if match:
+        return match.group(0)
+
+    return None
+
+
+def fetch_full_idea_analysis(url: str, timeout: int = 10) -> Optional[str]:
+    """
+    抓取 IdeaBrowser 網頁的完整分析內容
+
+    Args:
+        url: IdeaBrowser idea 頁面 URL
+        timeout: 請求超時時間（秒）
+
+    Returns:
+        網頁文字內容或 None
+    """
+    try:
+        log(f"🌐 抓取完整分析: {url}")
+
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+        }
+
+        response = requests.get(url, headers=headers, timeout=timeout)
+        response.raise_for_status()
+
+        soup = BeautifulSoup(response.content, 'lxml')
+
+        # 移除 script 和 style 標籤
+        for script in soup(['script', 'style', 'nav', 'footer', 'header']):
+            script.decompose()
+
+        # 提取主要內容
+        # 優先尋找 article、main 或 content 相關的 div
+        main_content = (
+            soup.find('article') or
+            soup.find('main') or
+            soup.find('div', class_=re.compile(r'content|article|post', re.I))
+        )
+
+        if main_content:
+            text = main_content.get_text(separator='\n', strip=True)
+        else:
+            # 降級為整個 body
+            text = soup.body.get_text(separator='\n', strip=True) if soup.body else soup.get_text(separator='\n', strip=True)
+
+        # 清理多餘空行
+        text = re.sub(r'\n\s*\n+', '\n\n', text)
+
+        log(f"✅ 抓取成功 (長度: {len(text)} 字元)")
+        return text
+
+    except requests.Timeout:
+        log(f"⚠️  請求超時 ({timeout}秒)")
+        return None
+    except requests.RequestException as e:
+        log(f"⚠️  網路請求失敗: {e}")
+        return None
+    except Exception as e:
+        log(f"⚠️  解析網頁失敗: {e}")
+        return None
+
+
 # ==================== OpenAI API ====================
 
-def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]:
+def generate_prd_with_openai(email_summary: str, full_analysis: Optional[str] = None, retry: int = 0) -> Optional[str]:
     """
     使用 OpenAI gpt-4o-mini 生成 PRD
 
     Args:
-        idea_content: 從信件提取的 idea 內容
+        email_summary: 從 email 提取的摘要內容
+        full_analysis: 從網頁抓取的完整分析（可選）
         retry: 當前重試次數
 
     Returns:
@@ -328,6 +409,19 @@ def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]
         return None
 
     client = openai.OpenAI(api_key=api_key)
+
+    # 組合內容
+    if full_analysis:
+        idea_content = f"""**Email 摘要**:
+{email_summary}
+
+---
+
+**完整分析**:
+{full_analysis}
+"""
+    else:
+        idea_content = email_summary
 
     prompt = f"""你是一位資深產品經理。
 
@@ -355,6 +449,7 @@ def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]
 - 內容具體、可執行
 - MVP Scope 要明確區分 Must-have 和 Nice-to-have
 - System Architecture 要包含技術棧建議
+- 如果提供了完整分析，請充分利用其中的市場洞察、競品分析、技術建議等資訊
 
 ---
 
@@ -389,7 +484,7 @@ def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]
         if retry < MAX_RETRIES_OPENAI:
             log(f"   {RETRY_DELAY} 秒後重試...")
             time.sleep(RETRY_DELAY)
-            return generate_prd_with_openai(idea_content, retry + 1)
+            return generate_prd_with_openai(email_summary, full_analysis, retry + 1)
         return None
 
     except openai.APIError as e:
@@ -397,7 +492,7 @@ def generate_prd_with_openai(idea_content: str, retry: int = 0) -> Optional[str]
         if retry < MAX_RETRIES_OPENAI:
             log(f"   {RETRY_DELAY} 秒後重試...")
             time.sleep(RETRY_DELAY)
-            return generate_prd_with_openai(idea_content, retry + 1)
+            return generate_prd_with_openai(email_summary, full_analysis, retry + 1)
         return None
 
     except Exception as e:
@@ -578,16 +673,30 @@ def main():
         log("  3. Gmail API 權限不足")
         sys.exit(0)  # 不算錯誤，只是沒有新 idea
 
-    # 3. 生成 PRD
-    log("\n🤖 Step 3: 使用 OpenAI 生成 PRD")
-    prd = generate_prd_with_openai(email_data['body'])
+    # 3. 抓取完整分析（如果有 URL）
+    log("\n🌐 Step 3: 抓取完整分析")
+    full_analysis = None
+    url = extract_url_from_email(email_data['body'])
+
+    if url:
+        log(f"   找到 URL: {url}")
+        full_analysis = fetch_full_idea_analysis(url)
+
+        if not full_analysis:
+            log("   ⚠️  網頁抓取失敗，將只使用 email 摘要")
+    else:
+        log("   ⚠️  Email 中沒有找到 URL，將只使用 email 摘要")
+
+    # 4. 生成 PRD
+    log("\n🤖 Step 4: 使用 OpenAI 生成 PRD")
+    prd = generate_prd_with_openai(email_data['body'], full_analysis)
 
     if not prd:
         log("\n❌ PRD 生成失敗")
         sys.exit(1)
 
-    # 4. 寫入檔案
-    log("\n💾 Step 4: 寫入檔案")
+    # 5. 寫入檔案
+    log("\n💾 Step 5: 寫入檔案")
     success = write_idea_files(prd, email_data)
 
     if not success:

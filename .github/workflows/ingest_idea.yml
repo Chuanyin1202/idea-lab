@@ -11,6 +11,8 @@ on:
 jobs:
   ingest:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允許推送 commits
 
     steps:
       - name: Checkout repository

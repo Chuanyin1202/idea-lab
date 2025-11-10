@@ -415,14 +415,14 @@ def generate_prd_with_openai(email_summary: str, full_analysis: Optional[str] = 
 
 **輸出格式**: Markdown with YAML Frontmatter
 
-**必須的 YAML Frontmatter** (放在文件最前面):
-```yaml
+**重要**: 文件必須以 YAML frontmatter 開頭（不要用程式碼區塊包裝）
+
+**正確的 Frontmatter 格式**（直接從第一行開始）:
 ---
 title: [產品名稱，英文，簡短]
 category: [單一分類，例如: ai, fintech, healthtech, edtech, marketplace, saas, productivity, social, entertainment, hardware, logistics 等]
 tags: [2-5個標籤，描述產品屬性，例如: ai, automation, b2b, mobile, analytics]
 ---
-```
 
 **必須包含的 Markdown 章節**:
 1. 產品名稱
@@ -440,7 +440,8 @@ tags: [2-5個標籤，描述產品屬性，例如: ai, automation, b2b, mobile, 
 13. Risks & Assumptions
 
 **注意事項**:
-- 使用繁體中文撰寫內容（但 frontmatter 用英文）
+- **文件第一行必須是 `---`**，不要在前面加任何內容（包括 ```yaml）
+- Frontmatter 內容用英文，正文用繁體中文
 - 內容具體、可執行
 - MVP Scope 要明確區分 Must-have 和 Nice-to-have
 - System Architecture 要包含技術棧建議

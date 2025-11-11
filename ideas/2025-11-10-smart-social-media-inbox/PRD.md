@@ -1,10 +1,8 @@
-```yaml
 ---
 title: Smart Social Media Inbox
 category: saas
-tags: [social media, automation, b2b, analytics, productivity]
+tags: [social-media, automation, b2b, analytics, productivity]
 ---
-```
 
 # 產品名稱
 Smart Social Media Inbox

@@ -11,3 +11,4 @@
 | 2025-11-13 | [FuneralFlow](ideas/2025-11-13-funeralflow/PRD.md) | saas | automation, b2b, funeral services, paperwork, family support |
 | 2025-11-14 | [NetworkROI](ideas/2025-11-14-networkroi/PRD.md) | saas | analytics, b2b, networking, crm |
 | 2025-11-15 | [PodSetup](ideas/2025-11-15-podsetup/PRD.md) | saas | podcasting, automation, mobile, b2c |
+| 2025-11-16 | [Unified Drone Workflow Platform](ideas/2025-11-16-unified-drone-workflow-platform/PRD.md) | saas | drone, workflow, b2b, automation |

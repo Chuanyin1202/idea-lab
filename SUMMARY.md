@@ -13,3 +13,4 @@
 | 2025-11-15 | [PodSetup](ideas/2025-11-15-podsetup/PRD.md) | saas | podcasting, automation, mobile, b2c |
 | 2025-11-16 | [Unified Drone Workflow Platform](ideas/2025-11-16-unified-drone-workflow-platform/PRD.md) | saas | drone, workflow, b2b, automation |
 | 2025-11-17 | [TalentBridge](ideas/2025-11-17-talentbridge/PRD.md) | marketplace | ai, mentorship, b2b, platform |
+| 2025-11-18 | [SepticSleuth](ideas/2025-11-18-septicsleuth/PRD.md) | saas | ai, automation, b2b, mobile, geospatial |

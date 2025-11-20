@@ -15,3 +15,4 @@
 | 2025-11-17 | [TalentBridge](ideas/2025-11-17-talentbridge/PRD.md) | marketplace | ai, mentorship, b2b, platform |
 | 2025-11-18 | [SepticSleuth](ideas/2025-11-18-septicsleuth/PRD.md) | saas | ai, automation, b2b, mobile, geospatial |
 | 2025-11-19 | [HydroSense](ideas/2025-11-19-hydrosense/PRD.md) | saas | agriculture, automation, b2b, ai, hydroponics |
+| 2025-11-20 | [InStockAI](ideas/2025-11-20-instockai/PRD.md) | saas | inventory management, ai, b2b, cleaning services, automation |

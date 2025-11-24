@@ -19,3 +19,4 @@
 | 2025-11-21 | [Automated Compliance Logger](ideas/2025-11-21-automated-compliance-logger/PRD.md) | saas | healthcare, compliance, automation, b2b, software |
 | 2025-11-22 | [SneakerScope](ideas/2025-11-22-sneakerscope/PRD.md) | saas | analytics, sneaker, b2b, automation, trend-analysis |
 | 2025-11-23 | [SneakerScope](ideas/2025-11-23-sneakerscope/PRD.md) | marketplace | analytics, sneaker, reselling, trends, prediction |
+| 2025-11-24 | [SpamRescue](ideas/2025-11-24-spamrescue/PRD.md) | saas | email, lead recovery, automation, b2b, small business |

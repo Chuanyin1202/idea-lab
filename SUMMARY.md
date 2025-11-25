@@ -20,3 +20,4 @@
 | 2025-11-22 | [SneakerScope](ideas/2025-11-22-sneakerscope/PRD.md) | saas | analytics, sneaker, b2b, automation, trend-analysis |
 | 2025-11-23 | [SneakerScope](ideas/2025-11-23-sneakerscope/PRD.md) | marketplace | analytics, sneaker, reselling, trends, prediction |
 | 2025-11-24 | [SpamRescue](ideas/2025-11-24-spamrescue/PRD.md) | saas | email, lead recovery, automation, b2b, small business |
+| 2025-11-25 | [EstateClear](ideas/2025-11-25-estateclear/PRD.md) | saas | estate management, communication, b2b, subscription, transparency |

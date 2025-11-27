@@ -22,3 +22,4 @@
 | 2025-11-24 | [SpamRescue](ideas/2025-11-24-spamrescue/PRD.md) | saas | email, lead recovery, automation, b2b, small business |
 | 2025-11-25 | [EstateClear](ideas/2025-11-25-estateclear/PRD.md) | saas | estate management, communication, b2b, subscription, transparency |
 | 2025-11-26 | [SleepSync](ideas/2025-11-26-sleepsync/PRD.md) | healthtech | wearable, sleep, data, saas, analytics |
+| 2025-11-27 | [DeadlineKeeper](ideas/2025-11-27-deadlinekeeper/PRD.md) | edtech | deadline management, student support, automation, b2c |

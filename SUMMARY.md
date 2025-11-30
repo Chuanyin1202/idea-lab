@@ -25,3 +25,4 @@
 | 2025-11-27 | [DeadlineKeeper](ideas/2025-11-27-deadlinekeeper/PRD.md) | edtech | deadline management, student support, automation, b2c |
 | 2025-11-28 | [Phishing Simulation Platform](ideas/2025-11-28-phishing-simulation-platform/PRD.md) | saas | cybersecurity, training, b2b, simulation, ai |
 | 2025-11-29 | [VanScan](ideas/2025-11-29-vanscan/PRD.md) | saas | inventory, automation, b2b, mobile, ai |
+| 2025-11-30 | [MarketPrep](ideas/2025-11-30-marketprep/PRD.md) | saas | ai, inventory, b2b, mobile, analytics |

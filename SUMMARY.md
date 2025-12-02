@@ -27,3 +27,4 @@
 | 2025-11-29 | [VanScan](ideas/2025-11-29-vanscan/PRD.md) | saas | inventory, automation, b2b, mobile, ai |
 | 2025-11-30 | [MarketPrep](ideas/2025-11-30-marketprep/PRD.md) | saas | ai, inventory, b2b, mobile, analytics |
 | 2025-12-01 | [EstiMate](ideas/2025-12-01-estimate/PRD.md) | saas | ai, home_improvement, productivity, mobile |
+| 2025-12-02 | [TeamBudget](ideas/2025-12-02-teambudget/PRD.md) | saas | budgeting, youth sports, transparency, b2c, financial management |

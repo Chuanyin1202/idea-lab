@@ -29,3 +29,4 @@
 | 2025-12-01 | [EstiMate](ideas/2025-12-01-estimate/PRD.md) | saas | ai, home_improvement, productivity, mobile |
 | 2025-12-02 | [TeamBudget](ideas/2025-12-02-teambudget/PRD.md) | saas | budgeting, youth sports, transparency, b2c, financial management |
 | 2025-12-03 | [SocialLoop](ideas/2025-12-03-socialloop/PRD.md) | healthtech | ai, mental health, caregiver support, community, subscription |
+| 2025-12-04 | [GuestGuide](ideas/2025-12-04-guestguide/PRD.md) | saas | hospitality, automation, b2b, guest experience |

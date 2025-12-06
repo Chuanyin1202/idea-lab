@@ -31,3 +31,4 @@
 | 2025-12-03 | [SocialLoop](ideas/2025-12-03-socialloop/PRD.md) | healthtech | ai, mental health, caregiver support, community, subscription |
 | 2025-12-04 | [GuestGuide](ideas/2025-12-04-guestguide/PRD.md) | saas | hospitality, automation, b2b, guest experience |
 | 2025-12-05 | [CareerPivot](ideas/2025-12-05-careerpivot/PRD.md) | saas | career, transition, coaching, productivity, b2b |
+| 2025-12-06 | [PlantDoc](ideas/2025-12-06-plantdoc/PRD.md) | healthtech | ai, mobile, subscription, gardening, diagnostics |

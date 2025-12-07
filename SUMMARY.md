@@ -32,3 +32,4 @@
 | 2025-12-04 | [GuestGuide](ideas/2025-12-04-guestguide/PRD.md) | saas | hospitality, automation, b2b, guest experience |
 | 2025-12-05 | [CareerPivot](ideas/2025-12-05-careerpivot/PRD.md) | saas | career, transition, coaching, productivity, b2b |
 | 2025-12-06 | [PlantDoc](ideas/2025-12-06-plantdoc/PRD.md) | healthtech | ai, mobile, subscription, gardening, diagnostics |
+| 2025-12-07 | [CinemaConnect](ideas/2025-12-07-cinemaconnect/PRD.md) | marketplace | sponsorship, events, b2b, automation |

@@ -33,3 +33,4 @@
 | 2025-12-05 | [CareerPivot](ideas/2025-12-05-careerpivot/PRD.md) | saas | career, transition, coaching, productivity, b2b |
 | 2025-12-06 | [PlantDoc](ideas/2025-12-06-plantdoc/PRD.md) | healthtech | ai, mobile, subscription, gardening, diagnostics |
 | 2025-12-07 | [CinemaConnect](ideas/2025-12-07-cinemaconnect/PRD.md) | marketplace | sponsorship, events, b2b, automation |
+| 2025-12-08 | [ClosetClear](ideas/2025-12-08-closetclear/PRD.md) | saas | fashion, sustainability, mobile, analytics |

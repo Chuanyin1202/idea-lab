@@ -34,3 +34,4 @@
 | 2025-12-06 | [PlantDoc](ideas/2025-12-06-plantdoc/PRD.md) | healthtech | ai, mobile, subscription, gardening, diagnostics |
 | 2025-12-07 | [CinemaConnect](ideas/2025-12-07-cinemaconnect/PRD.md) | marketplace | sponsorship, events, b2b, automation |
 | 2025-12-08 | [ClosetClear](ideas/2025-12-08-closetclear/PRD.md) | saas | fashion, sustainability, mobile, analytics |
+| 2025-12-09 | [RobloxGuard](ideas/2025-12-09-robloxguard/PRD.md) | saas | parental controls, gaming, fraud detection, b2c, security |

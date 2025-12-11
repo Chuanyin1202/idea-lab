@@ -36,3 +36,4 @@
 | 2025-12-08 | [ClosetClear](ideas/2025-12-08-closetclear/PRD.md) | saas | fashion, sustainability, mobile, analytics |
 | 2025-12-09 | [RobloxGuard](ideas/2025-12-09-robloxguard/PRD.md) | saas | parental controls, gaming, fraud detection, b2c, security |
 | 2025-12-10 | [BidSmart](ideas/2025-12-10-bidsmart/PRD.md) | saas | auction, analytics, b2c, pricing, strategy |
+| 2025-12-11 | [AdBooker](ideas/2025-12-11-adbooker/PRD.md) | saas | advertising, automation, b2b, newsletter, payment |

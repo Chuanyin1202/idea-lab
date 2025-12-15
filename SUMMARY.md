@@ -40,3 +40,4 @@
 | 2025-12-12 | [Pet Health Tracker](ideas/2025-12-12-pet-health-tracker/PRD.md) | healthtech | ai, petcare, subscription, mobile |
 | 2025-12-13 | [Ghost Caddie](ideas/2025-12-13-ghost-caddie/PRD.md) | sports tech | ai, mobile, b2c, analytics |
 | 2025-12-14 | [Lease Peace](ideas/2025-12-14-lease-peace/PRD.md) | saas | roommate matching, co-living, conflict resolution, b2b, automation |
+| 2025-12-15 | [MyCourse AI Tutor](ideas/2025-12-15-mycourse-ai-tutor/PRD.md) | saas | ai, education, b2b, automation |

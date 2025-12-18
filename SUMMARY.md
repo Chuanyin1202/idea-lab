@@ -43,3 +43,4 @@
 | 2025-12-15 | [MyCourse AI Tutor](ideas/2025-12-15-mycourse-ai-tutor/PRD.md) | saas | ai, education, b2b, automation |
 | 2025-12-16 | [Toddler Talk](ideas/2025-12-16-toddler-talk/PRD.md) | mobile_app | parenting, ai, subscription, b2c, productivity |
 | 2025-12-17 | [BNPL for Digital](ideas/2025-12-17-bnpl-for-digital/PRD.md) | fintech | buy-now-pay-later, saas, online-courses, payments, marketplace |
+| 2025-12-18 | [Slab Status](ideas/2025-12-18-slab-status/PRD.md) | marketplace | tracking, sports, collectibles, saas, subscription |

@@ -45,3 +45,4 @@
 | 2025-12-17 | [BNPL for Digital](ideas/2025-12-17-bnpl-for-digital/PRD.md) | fintech | buy-now-pay-later, saas, online-courses, payments, marketplace |
 | 2025-12-18 | [Slab Status](ideas/2025-12-18-slab-status/PRD.md) | marketplace | tracking, sports, collectibles, saas, subscription |
 | 2025-12-19 | [Build Along AI](ideas/2025-12-19-build-along-ai/PRD.md) | edtech | ai, coding, kids, education, platform |
+| 2025-12-20 | [AI Thumbnail Generator](ideas/2025-12-20-ai-thumbnail-generator/PRD.md) | saas | ai, automation, b2b, video, analytics |

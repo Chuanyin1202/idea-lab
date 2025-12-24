@@ -49,3 +49,4 @@
 | 2025-12-21 | [Return Desk](ideas/2025-12-21-return-desk/PRD.md) | saas | ai, automation, ecommerce, b2b |
 | 2025-12-22 | [Last 20](ideas/2025-12-22-last-20/PRD.md) | marketplace | expert, coding, support, freelance, platform |
 | 2025-12-23 | [VIN Analysis Tool](ideas/2025-12-23-vin-analysis-tool/PRD.md) | marketplace | automotive, analytics, b2c, saas |
+| 2025-12-24 | [Homeseller Marketing Platform](ideas/2025-12-24-homeseller-marketing-platform/PRD.md) | marketplace | real estate, marketing, saas, automation |

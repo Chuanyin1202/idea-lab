@@ -50,3 +50,4 @@
 | 2025-12-22 | [Last 20](ideas/2025-12-22-last-20/PRD.md) | marketplace | expert, coding, support, freelance, platform |
 | 2025-12-23 | [VIN Analysis Tool](ideas/2025-12-23-vin-analysis-tool/PRD.md) | marketplace | automotive, analytics, b2c, saas |
 | 2025-12-24 | [Homeseller Marketing Platform](ideas/2025-12-24-homeseller-marketing-platform/PRD.md) | marketplace | real estate, marketing, saas, automation |
+| 2025-12-25 | [Christmas Morning in a Box](ideas/2025-12-25-christmas-morning-in-a-box/PRD.md) | marketplace | parenting, holiday, subscription, convenience, gifting |

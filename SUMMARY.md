@@ -53,3 +53,4 @@
 | 2025-12-25 | [Christmas Morning in a Box](ideas/2025-12-25-christmas-morning-in-a-box/PRD.md) | marketplace | parenting, holiday, subscription, convenience, gifting |
 | 2025-12-26 | [Home Heat Check](ideas/2025-12-26-home-heat-check/PRD.md) | saas | energy, home improvement, mobile, subscription, contractor |
 | 2025-12-27 | [Code Coach](ideas/2025-12-27-code-coach/PRD.md) | edtech | ai, coding, education, productivity, saas |
+| 2025-12-28 | [Rebate Hunter](ideas/2025-12-28-rebate-hunter/PRD.md) | saas | rebates, energy efficiency, homeowners, contractors, automation |

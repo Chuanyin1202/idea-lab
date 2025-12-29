@@ -54,3 +54,4 @@
 | 2025-12-26 | [Home Heat Check](ideas/2025-12-26-home-heat-check/PRD.md) | saas | energy, home improvement, mobile, subscription, contractor |
 | 2025-12-27 | [Code Coach](ideas/2025-12-27-code-coach/PRD.md) | edtech | ai, coding, education, productivity, saas |
 | 2025-12-28 | [Rebate Hunter](ideas/2025-12-28-rebate-hunter/PRD.md) | saas | rebates, energy efficiency, homeowners, contractors, automation |
+| 2025-12-29 | [Drop and Bill](ideas/2025-12-29-drop-and-bill/PRD.md) | saas | automation, invoicing, courier, b2b, productivity |

@@ -58,3 +58,4 @@
 | 2025-12-30 | [Pay Yourself First](ideas/2025-12-30-pay-yourself-first/PRD.md) | fintech | savings, automation, freelancers, budgeting, retirement |
 | 2025-12-31 | [Shift Sorted](ideas/2025-12-31-shift-sorted/PRD.md) | saas | scheduling, automation, b2b, mobile |
 | 2026-01-01 | [Personalized Story Books](ideas/2026-01-01-personalized-story-books/PRD.md) | marketplace | ai, family, subscription, storytelling |
+| 2026-01-02 | [Aging Safe](ideas/2026-01-02-aging-safe/PRD.md) | healthtech | eldercare, saas, mobile, automation, ai |

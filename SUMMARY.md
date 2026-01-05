@@ -61,3 +61,4 @@
 | 2026-01-02 | [Aging Safe](ideas/2026-01-02-aging-safe/PRD.md) | healthtech | eldercare, saas, mobile, automation, ai |
 | 2026-01-03 | [More Calls](ideas/2026-01-03-more-calls/PRD.md) | saas | local marketing, tradespeople, lead generation, automation |
 | 2026-01-04 | [RV Rescue](ideas/2026-01-04-rv-rescue/PRD.md) | marketplace | mobile, service, b2c, on-demand |
+| 2026-01-05 | [No More Shoeboxes](ideas/2026-01-05-no-more-shoeboxes/PRD.md) | saas | automation, bookkeeping, b2b, productivity |

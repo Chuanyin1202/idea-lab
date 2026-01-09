@@ -65,3 +65,4 @@
 | 2026-01-06 | [Next Chapter](ideas/2026-01-06-next-chapter/PRD.md) | marketplace | career, athletes, recruitment, platform, saas |
 | 2026-01-07 | [GigProofer](ideas/2026-01-07-gigproofer/PRD.md) | fintech | income verification, gig economy, mobile, b2c, automation |
 | 2026-01-08 | [Chart Ready](ideas/2026-01-08-chart-ready/PRD.md) | healthtech | ai, healthcare, productivity, saas |
+| 2026-01-09 | [Atomize](ideas/2026-01-09-atomize/PRD.md) | saas | ai, content, automation, b2b, productivity |

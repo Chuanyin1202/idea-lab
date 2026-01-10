@@ -66,3 +66,4 @@
 | 2026-01-07 | [GigProofer](ideas/2026-01-07-gigproofer/PRD.md) | fintech | income verification, gig economy, mobile, b2c, automation |
 | 2026-01-08 | [Chart Ready](ideas/2026-01-08-chart-ready/PRD.md) | healthtech | ai, healthcare, productivity, saas |
 | 2026-01-09 | [Atomize](ideas/2026-01-09-atomize/PRD.md) | saas | ai, content, automation, b2b, productivity |
+| 2026-01-10 | [Clear To Hire](ideas/2026-01-10-clear-to-hire/PRD.md) | saas | compliance, recruitment, startup, international, automation |

@@ -67,3 +67,4 @@
 | 2026-01-08 | [Chart Ready](ideas/2026-01-08-chart-ready/PRD.md) | healthtech | ai, healthcare, productivity, saas |
 | 2026-01-09 | [Atomize](ideas/2026-01-09-atomize/PRD.md) | saas | ai, content, automation, b2b, productivity |
 | 2026-01-10 | [Clear To Hire](ideas/2026-01-10-clear-to-hire/PRD.md) | saas | compliance, recruitment, startup, international, automation |
+| 2026-01-11 | [AfterWords AI](ideas/2026-01-11-afterwords-ai/PRD.md) | saas | ai, sales, productivity, automation |

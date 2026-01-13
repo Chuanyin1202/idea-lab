@@ -69,3 +69,4 @@
 | 2026-01-10 | [Clear To Hire](ideas/2026-01-10-clear-to-hire/PRD.md) | saas | compliance, recruitment, startup, international, automation |
 | 2026-01-11 | [AfterWords AI](ideas/2026-01-11-afterwords-ai/PRD.md) | saas | ai, sales, productivity, automation |
 | 2026-01-12 | [Prove It](ideas/2026-01-12-prove-it/PRD.md) | saas | influencer, marketing, analytics, b2b, automation |
+| 2026-01-13 | [Fill The Hour](ideas/2026-01-13-fill-the-hour/PRD.md) | saas | automation, healthcare, scheduling, b2b |

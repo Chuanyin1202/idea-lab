@@ -72,3 +72,4 @@
 | 2026-01-13 | [Fill The Hour](ideas/2026-01-13-fill-the-hour/PRD.md) | saas | automation, healthcare, scheduling, b2b |
 | 2026-01-14 | [Shop The Room](ideas/2026-01-14-shop-the-room/PRD.md) | marketplace | furniture, shopping, mobile, affiliate, interior design |
 | 2026-01-15 | [AI Practice Plan Generator](ideas/2026-01-15-ai-practice-plan-generator/PRD.md) | edtech | ai, automation, music, productivity, mobile |
+| 2026-01-16 | [Sure Fix](ideas/2026-01-16-sure-fix/PRD.md) | saas | ai, diagnostics, b2b, productivity |

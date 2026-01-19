@@ -75,3 +75,4 @@
 | 2026-01-16 | [Sure Fix](ideas/2026-01-16-sure-fix/PRD.md) | saas | ai, diagnostics, b2b, productivity |
 | 2026-01-17 | [Sure Fix](ideas/2026-01-17-sure-fix/PRD.md) | saas | ai, diagnostics, b2b, productivity |
 | 2026-01-18 | [Doula Match](ideas/2026-01-18-doula-match/PRD.md) | marketplace | doula, parenting, matching, healthcare, platform |
+| 2026-01-19 | [Build Sight](ideas/2026-01-19-build-sight/PRD.md) | saas | construction, supply-chain, tracking, b2b, automation |

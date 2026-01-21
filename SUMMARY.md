@@ -77,3 +77,4 @@
 | 2026-01-18 | [Doula Match](ideas/2026-01-18-doula-match/PRD.md) | marketplace | doula, parenting, matching, healthcare, platform |
 | 2026-01-19 | [Build Sight](ideas/2026-01-19-build-sight/PRD.md) | saas | construction, supply-chain, tracking, b2b, automation |
 | 2026-01-20 | [ChatAssist](ideas/2026-01-20-chatassist/PRD.md) | saas | ai, automation, e-commerce, live-streaming |
+| 2026-01-21 | [Stone Search](ideas/2026-01-21-stone-search/PRD.md) | saas | genealogy, ai, database, automation, b2b |

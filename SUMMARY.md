@@ -81,3 +81,4 @@
 | 2026-01-22 | [One Property](ideas/2026-01-22-one-property/PRD.md) | fintech | tax, automation, b2c, mobile |
 | 2026-01-23 | [SalaryRep](ideas/2026-01-23-salaryrep/PRD.md) | saas | negotiation, career, ai, training, b2c |
 | 2026-01-24 | [Dent to Done](ideas/2026-01-24-dent-to-done/PRD.md) | saas | ai, automation, b2b, claims processing |
+| 2026-01-25 | [Aftercare Messaging Agent](ideas/2026-01-25-aftercare-messaging-agent/PRD.md) | healthtech | automation, b2b, messaging, ai |

@@ -82,3 +82,4 @@
 | 2026-01-23 | [SalaryRep](ideas/2026-01-23-salaryrep/PRD.md) | saas | negotiation, career, ai, training, b2c |
 | 2026-01-24 | [Dent to Done](ideas/2026-01-24-dent-to-done/PRD.md) | saas | ai, automation, b2b, claims processing |
 | 2026-01-25 | [Aftercare Messaging Agent](ideas/2026-01-25-aftercare-messaging-agent/PRD.md) | healthtech | automation, b2b, messaging, ai |
+| 2026-01-26 | [Scout Reel](ideas/2026-01-26-scout-reel/PRD.md) | saas | ai, sports, video, automation |

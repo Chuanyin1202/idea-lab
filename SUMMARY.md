@@ -84,3 +84,4 @@
 | 2026-01-25 | [Aftercare Messaging Agent](ideas/2026-01-25-aftercare-messaging-agent/PRD.md) | healthtech | automation, b2b, messaging, ai |
 | 2026-01-26 | [Scout Reel](ideas/2026-01-26-scout-reel/PRD.md) | saas | ai, sports, video, automation |
 | 2026-01-27 | [AuthentiScan](ideas/2026-01-27-authentiscan/PRD.md) | saas | ai, authentication, luxury, marketplace, mobile |
+| 2026-01-28 | [Proof Check](ideas/2026-01-28-proof-check/PRD.md) | saas | mvp |

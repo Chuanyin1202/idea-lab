@@ -86,3 +86,4 @@
 | 2026-01-27 | [AuthentiScan](ideas/2026-01-27-authentiscan/PRD.md) | saas | ai, authentication, luxury, marketplace, mobile |
 | 2026-01-28 | [Proof Check](ideas/2026-01-28-proof-check/PRD.md) | saas | mvp |
 | 2026-01-29 | [RoofAge](ideas/2026-01-29-roofage/PRD.md) | saas | ai, home-inspection, automation, mobile |
+| 2026-01-30 | [Sympatico](ideas/2026-01-30-sympatico/PRD.md) | healthtech | caregiver, matching, saas, analytics, automation |

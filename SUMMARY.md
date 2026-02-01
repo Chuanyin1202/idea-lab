@@ -88,3 +88,4 @@
 | 2026-01-29 | [RoofAge](ideas/2026-01-29-roofage/PRD.md) | saas | ai, home-inspection, automation, mobile |
 | 2026-01-30 | [Sympatico](ideas/2026-01-30-sympatico/PRD.md) | healthtech | caregiver, matching, saas, analytics, automation |
 | 2026-01-31 | [Deal Vault](ideas/2026-01-31-deal-vault/PRD.md) | saas | b2b, sports, compliance, automation |
+| 2026-02-01 | [Bill Bot](ideas/2026-02-01-bill-bot/PRD.md) | healthtech | negotiation, medical, automation, saas |

@@ -90,3 +90,4 @@
 | 2026-01-31 | [Deal Vault](ideas/2026-01-31-deal-vault/PRD.md) | saas | b2b, sports, compliance, automation |
 | 2026-02-01 | [Bill Bot](ideas/2026-02-01-bill-bot/PRD.md) | healthtech | negotiation, medical, automation, saas |
 | 2026-02-02 | [Car Lot Wizard](ideas/2026-02-02-car-lot-wizard/PRD.md) | marketplace | car buying, negotiation, web app, consumer tools |
+| 2026-02-03 | [HomeGuard Plus](ideas/2026-02-03-homeguard-plus/PRD.md) | saas | mvp |

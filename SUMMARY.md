@@ -91,3 +91,4 @@
 | 2026-02-01 | [Bill Bot](ideas/2026-02-01-bill-bot/PRD.md) | healthtech | negotiation, medical, automation, saas |
 | 2026-02-02 | [Car Lot Wizard](ideas/2026-02-02-car-lot-wizard/PRD.md) | marketplace | car buying, negotiation, web app, consumer tools |
 | 2026-02-03 | [HomeGuard Plus](ideas/2026-02-03-homeguard-plus/PRD.md) | saas | mvp |
+| 2026-02-04 | [PetCare AI](ideas/2026-02-04-petcare-ai/PRD.md) | healthtech | ai, petcare, transparency, mobile, saas |

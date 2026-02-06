@@ -93,3 +93,4 @@
 | 2026-02-03 | [HomeGuard Plus](ideas/2026-02-03-homeguard-plus/PRD.md) | saas | mvp |
 | 2026-02-04 | [PetCare AI](ideas/2026-02-04-petcare-ai/PRD.md) | healthtech | ai, petcare, transparency, mobile, saas |
 | 2026-02-05 | [Trust Layer](ideas/2026-02-05-trust-layer/PRD.md) | saas | ecommerce, conversion, analytics, automation |
+| 2026-02-06 | [7 to 7](ideas/2026-02-06-7-to-7/PRD.md) | healthtech | sleep, wellness, mobile, b2b, subscription |

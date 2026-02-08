@@ -95,3 +95,4 @@
 | 2026-02-05 | [Trust Layer](ideas/2026-02-05-trust-layer/PRD.md) | saas | ecommerce, conversion, analytics, automation |
 | 2026-02-06 | [7 to 7](ideas/2026-02-06-7-to-7/PRD.md) | healthtech | sleep, wellness, mobile, b2b, subscription |
 | 2026-02-07 | [HerCompass](ideas/2026-02-07-hercompass/PRD.md) | healthtech | menopause, symptom-tracking, wellness, saas, analytics |
+| 2026-02-08 | [FitFinder](ideas/2026-02-08-fitfinder/PRD.md) | marketplace | sports, recruitment, data, analytics |

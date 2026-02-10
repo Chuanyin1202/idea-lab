@@ -97,3 +97,4 @@
 | 2026-02-07 | [HerCompass](ideas/2026-02-07-hercompass/PRD.md) | healthtech | menopause, symptom-tracking, wellness, saas, analytics |
 | 2026-02-08 | [FitFinder](ideas/2026-02-08-fitfinder/PRD.md) | marketplace | sports, recruitment, data, analytics |
 | 2026-02-09 | [Credit Clock](ideas/2026-02-09-credit-clock/PRD.md) | fintech | credit, coaching, mortgage, subscription, b2c |
+| 2026-02-10 | [Benefits Found](ideas/2026-02-10-benefits-found/PRD.md) | healthtech | benefits, seniors, automation, saas, b2c |

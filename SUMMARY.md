@@ -98,3 +98,4 @@
 | 2026-02-08 | [FitFinder](ideas/2026-02-08-fitfinder/PRD.md) | marketplace | sports, recruitment, data, analytics |
 | 2026-02-09 | [Credit Clock](ideas/2026-02-09-credit-clock/PRD.md) | fintech | credit, coaching, mortgage, subscription, b2c |
 | 2026-02-10 | [Benefits Found](ideas/2026-02-10-benefits-found/PRD.md) | healthtech | benefits, seniors, automation, saas, b2c |
+| 2026-02-11 | [Speech Play](ideas/2026-02-11-speech-play/PRD.md) | healthtech | speech therapy, mobile, gamification, education |

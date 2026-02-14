@@ -101,3 +101,4 @@
 | 2026-02-11 | [Speech Play](ideas/2026-02-11-speech-play/PRD.md) | healthtech | speech therapy, mobile, gamification, education |
 | 2026-02-12 | [Storm Dents](ideas/2026-02-12-storm-dents/PRD.md) | marketplace | PDR, mobile, body shops, marketplace, on-demand |
 | 2026-02-13 | [TrustScore](ideas/2026-02-13-trustscore/PRD.md) | saas | ai, automation, b2b, marketplace, analytics |
+| 2026-02-14 | [You&Me](ideas/2026-02-14-you-me/PRD.md) | marketplace | couples, experiences, booking, local, adventure |

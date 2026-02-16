@@ -103,3 +103,4 @@
 | 2026-02-13 | [TrustScore](ideas/2026-02-13-trustscore/PRD.md) | saas | ai, automation, b2b, marketplace, analytics |
 | 2026-02-14 | [You&Me](ideas/2026-02-14-you-me/PRD.md) | marketplace | couples, experiences, booking, local, adventure |
 | 2026-02-15 | [Home Upkeep AI](ideas/2026-02-15-home-upkeep-ai/PRD.md) | saas | mvp |
+| 2026-02-16 | [Viral Waves](ideas/2026-02-16-viral-waves/PRD.md) | social | trends, analytics, TikTok, notifications, creators |

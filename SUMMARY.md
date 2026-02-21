@@ -108,3 +108,4 @@
 | 2026-02-18 | [CreditBuilder](ideas/2026-02-18-creditbuilder/PRD.md) | fintech | credit, personal finance, saas, mobile, education |
 | 2026-02-19 | [Career Jump](ideas/2026-02-19-career-jump/PRD.md) | marketplace | mvp |
 | 2026-02-20 | [ShrinkWatch](ideas/2026-02-20-shrinkwatch/PRD.md) | marketplace | consumer, mobile, data, analytics, community |
+| 2026-02-21 | [ShrinkWatch](ideas/2026-02-21-shrinkwatch/PRD.md) | marketplace | consumer, data, mobile, analytics |

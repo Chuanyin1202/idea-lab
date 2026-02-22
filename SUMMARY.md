@@ -109,3 +109,4 @@
 | 2026-02-19 | [Career Jump](ideas/2026-02-19-career-jump/PRD.md) | marketplace | mvp |
 | 2026-02-20 | [ShrinkWatch](ideas/2026-02-20-shrinkwatch/PRD.md) | marketplace | consumer, mobile, data, analytics, community |
 | 2026-02-21 | [ShrinkWatch](ideas/2026-02-21-shrinkwatch/PRD.md) | marketplace | consumer, data, mobile, analytics |
+| 2026-02-22 | [Adventures Of](ideas/2026-02-22-adventures-of/PRD.md) | edtech | ai, personalization, children, storytelling, subscription |

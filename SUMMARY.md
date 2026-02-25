@@ -112,3 +112,4 @@
 | 2026-02-22 | [Adventures Of](ideas/2026-02-22-adventures-of/PRD.md) | edtech | ai, personalization, children, storytelling, subscription |
 | 2026-02-23 | [Critter On Call](ideas/2026-02-23-critter-on-call/PRD.md) | marketplace | wildlife, emergency, mobile, local services, saas |
 | 2026-02-24 | [Critter On Call](ideas/2026-02-24-critter-on-call/PRD.md) | marketplace | wildlife, emergency, mobile, saas, local services |
+| 2026-02-25 | [Test Briefs](ideas/2026-02-25-test-briefs/PRD.md) | edtech | ai, education, lsat, personalization, analytics |

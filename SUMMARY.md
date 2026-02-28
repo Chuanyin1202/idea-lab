@@ -115,3 +115,4 @@
 | 2026-02-25 | [Test Briefs](ideas/2026-02-25-test-briefs/PRD.md) | edtech | ai, education, lsat, personalization, analytics |
 | 2026-02-26 | [Sweep Signal](ideas/2026-02-26-sweep-signal/PRD.md) | saas | construction, cleaning, automation, b2b, alerts |
 | 2026-02-27 | [PostDose](ideas/2026-02-27-postdose/PRD.md) | healthtech | nutrition, app, GLP-1, health, personalization |
+| 2026-02-28 | [PostDose](ideas/2026-02-28-postdose/PRD.md) | healthtech | nutrition, health, mobile, subscription |

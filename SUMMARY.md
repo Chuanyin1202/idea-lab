@@ -116,3 +116,4 @@
 | 2026-02-26 | [Sweep Signal](ideas/2026-02-26-sweep-signal/PRD.md) | saas | construction, cleaning, automation, b2b, alerts |
 | 2026-02-27 | [PostDose](ideas/2026-02-27-postdose/PRD.md) | healthtech | nutrition, app, GLP-1, health, personalization |
 | 2026-02-28 | [PostDose](ideas/2026-02-28-postdose/PRD.md) | healthtech | nutrition, health, mobile, subscription |
+| 2026-03-01 | [Detour](ideas/2026-03-01-detour/PRD.md) | fintech | financial planning, retirement, millennials, b2c, b2b |

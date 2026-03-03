@@ -118,3 +118,4 @@
 | 2026-02-28 | [PostDose](ideas/2026-02-28-postdose/PRD.md) | healthtech | nutrition, health, mobile, subscription |
 | 2026-03-01 | [Detour](ideas/2026-03-01-detour/PRD.md) | fintech | financial planning, retirement, millennials, b2c, b2b |
 | 2026-03-02 | [FraudBlocker](ideas/2026-03-02-fraudblocker/PRD.md) | saas | fraud prevention, security, family, subscription |
+| 2026-03-03 | [PortaCast](ideas/2026-03-03-portacast/PRD.md) | saas | demand-forecasting, portable-toilets, fleet-management, analytics |

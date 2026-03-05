@@ -120,3 +120,4 @@
 | 2026-03-02 | [FraudBlocker](ideas/2026-03-02-fraudblocker/PRD.md) | saas | fraud prevention, security, family, subscription |
 | 2026-03-03 | [PortaCast](ideas/2026-03-03-portacast/PRD.md) | saas | demand-forecasting, portable-toilets, fleet-management, analytics |
 | 2026-03-04 | [LocalSync](ideas/2026-03-04-localsync/PRD.md) | saas | automation, b2b, productivity, listings |
+| 2026-03-05 | [Comply AI](ideas/2026-03-05-comply-ai/PRD.md) | saas | compliance, ai, startups, automation, risk-management |

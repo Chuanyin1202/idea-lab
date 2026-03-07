@@ -122,3 +122,4 @@
 | 2026-03-04 | [LocalSync](ideas/2026-03-04-localsync/PRD.md) | saas | automation, b2b, productivity, listings |
 | 2026-03-05 | [Comply AI](ideas/2026-03-05-comply-ai/PRD.md) | saas | compliance, ai, startups, automation, risk-management |
 | 2026-03-06 | [Comply AI](ideas/2026-03-06-comply-ai/PRD.md) | saas | ai, compliance, startup, risk management, automation |
+| 2026-03-07 | [Succession](ideas/2026-03-07-succession/PRD.md) | saas | ai, automation, b2b, knowledge-capture |

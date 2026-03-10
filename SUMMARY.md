@@ -125,3 +125,4 @@
 | 2026-03-07 | [Succession](ideas/2026-03-07-succession/PRD.md) | saas | ai, automation, b2b, knowledge-capture |
 | 2026-03-08 | [Fareburn](ideas/2026-03-08-fareburn/PRD.md) | fintech | ai, rewards, travel, automation, b2c |
 | 2026-03-09 | [Pipeyard](ideas/2026-03-09-pipeyard/PRD.md) | marketplace | ai, integrations, developer, productivity |
+| 2026-03-10 | [Lapsely](ideas/2026-03-10-lapsely/PRD.md) | healthtech | saas, compliance, healthcare, automation |

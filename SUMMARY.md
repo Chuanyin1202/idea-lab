@@ -132,3 +132,4 @@
 | 2026-03-15 | [Reroute](ideas/2026-03-15-reroute/PRD.md) | traveltech | automation, claims, saas, b2c, b2b |
 | 2026-03-16 | [CryptoLegacy](ideas/2026-03-16-cryptolegacy/PRD.md) | fintech | crypto, inheritance, security, saas, automation |
 | 2026-03-17 | [On Special](ideas/2026-03-17-on-special/PRD.md) | saas | ai, automation, b2b, marketing |
+| 2026-03-18 | [Coinstack](ideas/2026-03-18-coinstack/PRD.md) | fintech | personal finance, gamification, mobile, subscription |

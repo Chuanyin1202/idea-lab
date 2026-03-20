@@ -134,3 +134,4 @@
 | 2026-03-17 | [On Special](ideas/2026-03-17-on-special/PRD.md) | saas | ai, automation, b2b, marketing |
 | 2026-03-18 | [Coinstack](ideas/2026-03-18-coinstack/PRD.md) | fintech | personal finance, gamification, mobile, subscription |
 | 2026-03-19 | [Prepitch](ideas/2026-03-19-prepitch/PRD.md) | saas | ai, sales, training, b2b |
+| 2026-03-20 | [StayHome](ideas/2026-03-20-stayhome/PRD.md) | healthtech | seniors, home safety, subscription, b2b, contractor network |

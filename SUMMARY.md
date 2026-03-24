@@ -138,3 +138,4 @@
 | 2026-03-21 | [StayHome](ideas/2026-03-21-stayhome/PRD.md) | healthtech | home safety, aging, subscription, b2c, contractor network |
 | 2026-03-22 | [PartyPop](ideas/2026-03-22-partypop/PRD.md) | marketplace | ai, party-planning, b2c, mobile, automation |
 | 2026-03-23 | [Nullify AI](ideas/2026-03-23-nullify-ai/PRD.md) | fintech | ai, compliance, automation, b2b |
+| 2026-03-24 | [Stackedstage](ideas/2026-03-24-stackedstage/PRD.md) | marketplace | live music, booking, analytics, entertainment, saas |

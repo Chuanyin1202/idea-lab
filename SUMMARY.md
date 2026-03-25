@@ -139,3 +139,4 @@
 | 2026-03-22 | [PartyPop](ideas/2026-03-22-partypop/PRD.md) | marketplace | ai, party-planning, b2c, mobile, automation |
 | 2026-03-23 | [Nullify AI](ideas/2026-03-23-nullify-ai/PRD.md) | fintech | ai, compliance, automation, b2b |
 | 2026-03-24 | [Stackedstage](ideas/2026-03-24-stackedstage/PRD.md) | marketplace | live music, booking, analytics, entertainment, saas |
+| 2026-03-25 | [LocalCrawl](ideas/2026-03-25-localcrawl/PRD.md) | marketplace | local, tourism, analytics, mobile, community |

@@ -141,3 +141,4 @@
 | 2026-03-24 | [Stackedstage](ideas/2026-03-24-stackedstage/PRD.md) | marketplace | live music, booking, analytics, entertainment, saas |
 | 2026-03-25 | [LocalCrawl](ideas/2026-03-25-localcrawl/PRD.md) | marketplace | local, tourism, analytics, mobile, community |
 | 2026-03-26 | [Markday](ideas/2026-03-26-markday/PRD.md) | edtech | ai, drawing, productivity, subscription |
+| 2026-03-27 | [Unclaimed Money Finder](ideas/2026-03-27-unclaimed-money-finder/PRD.md) | fintech | b2c, automation, search, claims |

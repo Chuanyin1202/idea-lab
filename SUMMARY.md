@@ -142,3 +142,4 @@
 | 2026-03-25 | [LocalCrawl](ideas/2026-03-25-localcrawl/PRD.md) | marketplace | local, tourism, analytics, mobile, community |
 | 2026-03-26 | [Markday](ideas/2026-03-26-markday/PRD.md) | edtech | ai, drawing, productivity, subscription |
 | 2026-03-27 | [Unclaimed Money Finder](ideas/2026-03-27-unclaimed-money-finder/PRD.md) | fintech | b2c, automation, search, claims |
+| 2026-03-28 | [Reclaimd](ideas/2026-03-28-reclaimd/PRD.md) | fintech | unclaimed money, automation, b2c, identity verification |

@@ -145,3 +145,4 @@
 | 2026-03-28 | [Reclaimd](ideas/2026-03-28-reclaimd/PRD.md) | fintech | unclaimed money, automation, b2c, identity verification |
 | 2026-03-29 | [Barplay](ideas/2026-03-29-barplay/PRD.md) | social | qr-code, trivia, engagement, nightlife, analytics |
 | 2026-03-30 | [Tendly](ideas/2026-03-30-tendly/PRD.md) | marketplace | government contracts, small business, automation, ai, alerts |
+| 2026-03-31 | [Fieldpin](ideas/2026-03-31-fieldpin/PRD.md) | saas | mobile, offline, conservation, data-collection |

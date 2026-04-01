@@ -146,3 +146,4 @@
 | 2026-03-29 | [Barplay](ideas/2026-03-29-barplay/PRD.md) | social | qr-code, trivia, engagement, nightlife, analytics |
 | 2026-03-30 | [Tendly](ideas/2026-03-30-tendly/PRD.md) | marketplace | government contracts, small business, automation, ai, alerts |
 | 2026-03-31 | [Fieldpin](ideas/2026-03-31-fieldpin/PRD.md) | saas | mobile, offline, conservation, data-collection |
+| 2026-04-01 | [Fencepost](ideas/2026-04-01-fencepost/PRD.md) | saas | ai, security, automation, b2b |

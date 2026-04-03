@@ -148,3 +148,4 @@
 | 2026-03-31 | [Fieldpin](ideas/2026-03-31-fieldpin/PRD.md) | saas | mobile, offline, conservation, data-collection |
 | 2026-04-01 | [Fencepost](ideas/2026-04-01-fencepost/PRD.md) | saas | ai, security, automation, b2b |
 | 2026-04-02 | [Talktrack](ideas/2026-04-02-talktrack/PRD.md) | saas | ai, training, management, simulation |
+| 2026-04-03 | [Talktrack](ideas/2026-04-03-talktrack/PRD.md) | saas | ai, training, management, productivity |

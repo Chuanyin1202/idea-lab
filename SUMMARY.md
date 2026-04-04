@@ -149,3 +149,4 @@
 | 2026-04-01 | [Fencepost](ideas/2026-04-01-fencepost/PRD.md) | saas | ai, security, automation, b2b |
 | 2026-04-02 | [Talktrack](ideas/2026-04-02-talktrack/PRD.md) | saas | ai, training, management, simulation |
 | 2026-04-03 | [Talktrack](ideas/2026-04-03-talktrack/PRD.md) | saas | ai, training, management, productivity |
+| 2026-04-04 | [Test To Table](ideas/2026-04-04-test-to-table/PRD.md) | healthtech | ai, health, nutrition, saas |

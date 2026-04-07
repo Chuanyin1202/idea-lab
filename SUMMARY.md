@@ -152,3 +152,4 @@
 | 2026-04-04 | [Test To Table](ideas/2026-04-04-test-to-table/PRD.md) | healthtech | ai, health, nutrition, saas |
 | 2026-04-05 | [Tenpay](ideas/2026-04-05-tenpay/PRD.md) | fintech | accounting, automation, b2b, saas, creator-economy |
 | 2026-04-06 | [Restamp](ideas/2026-04-06-restamp/PRD.md) | marketplace | education, compliance, reviews, subscription |
+| 2026-04-07 | [Conduit](ideas/2026-04-07-conduit/PRD.md) | saas | youtube, automation, productivity, analytics |

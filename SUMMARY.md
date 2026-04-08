@@ -153,3 +153,4 @@
 | 2026-04-05 | [Tenpay](ideas/2026-04-05-tenpay/PRD.md) | fintech | accounting, automation, b2b, saas, creator-economy |
 | 2026-04-06 | [Restamp](ideas/2026-04-06-restamp/PRD.md) | marketplace | education, compliance, reviews, subscription |
 | 2026-04-07 | [Conduit](ideas/2026-04-07-conduit/PRD.md) | saas | youtube, automation, productivity, analytics |
+| 2026-04-08 | [Found And Tested](ideas/2026-04-08-found-and-tested/PRD.md) | marketplace | virtual assistants, small business, skill testing, vetting |

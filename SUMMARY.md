@@ -155,3 +155,4 @@
 | 2026-04-07 | [Conduit](ideas/2026-04-07-conduit/PRD.md) | saas | youtube, automation, productivity, analytics |
 | 2026-04-08 | [Found And Tested](ideas/2026-04-08-found-and-tested/PRD.md) | marketplace | virtual assistants, small business, skill testing, vetting |
 | 2026-04-09 | [CashComp](ideas/2026-04-09-cashcomp/PRD.md) | saas | mvp |
+| 2026-04-10 | [Classmold](ideas/2026-04-10-classmold/PRD.md) | edtech | interactive learning, saas, K-12, education, analytics |

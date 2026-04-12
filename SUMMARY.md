@@ -157,3 +157,4 @@
 | 2026-04-09 | [CashComp](ideas/2026-04-09-cashcomp/PRD.md) | saas | mvp |
 | 2026-04-10 | [Classmold](ideas/2026-04-10-classmold/PRD.md) | edtech | interactive learning, saas, K-12, education, analytics |
 | 2026-04-11 | [Classmold](ideas/2026-04-11-classmold/PRD.md) | edtech | interactive-learning, marketplace, analytics, saas, education |
+| 2026-04-12 | [SafeBuild](ideas/2026-04-12-safebuild/PRD.md) | saas | compliance, no-code, healthcare, automation |

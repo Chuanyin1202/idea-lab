@@ -159,3 +159,4 @@
 | 2026-04-11 | [Classmold](ideas/2026-04-11-classmold/PRD.md) | edtech | interactive-learning, marketplace, analytics, saas, education |
 | 2026-04-12 | [SafeBuild](ideas/2026-04-12-safebuild/PRD.md) | saas | compliance, no-code, healthcare, automation |
 | 2026-04-13 | [GitLeads](ideas/2026-04-13-gitleads/PRD.md) | saas | lead generation, sales, developer tools, analytics |
+| 2026-04-14 | [Brandgrade](ideas/2026-04-14-brandgrade/PRD.md) | saas | video, branding, analytics, productivity |

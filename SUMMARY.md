@@ -161,3 +161,4 @@
 | 2026-04-13 | [GitLeads](ideas/2026-04-13-gitleads/PRD.md) | saas | lead generation, sales, developer tools, analytics |
 | 2026-04-14 | [Brandgrade](ideas/2026-04-14-brandgrade/PRD.md) | saas | video, branding, analytics, productivity |
 | 2026-04-15 | [Brandgrade](ideas/2026-04-15-brandgrade/PRD.md) | saas | video, branding, analytics, productivity |
+| 2026-04-16 | [Canary in a Box](ideas/2026-04-16-canary-in-a-box/PRD.md) | saas | testing, no-code, automation, analytics |

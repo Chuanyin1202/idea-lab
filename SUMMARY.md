@@ -164,3 +164,4 @@
 | 2026-04-16 | [Canary in a Box](ideas/2026-04-16-canary-in-a-box/PRD.md) | saas | testing, no-code, automation, analytics |
 | 2026-04-17 | [Canary in a Box](ideas/2026-04-17-canary-in-a-box/PRD.md) | saas | no-code, testing, automation, analytics |
 | 2026-04-19 | [Subcontractor Compliance Tracker](ideas/2026-04-19-subcontractor-compliance-tracker/PRD.md) | saas | construction, compliance, automation, b2b, productivity |
+| 2026-04-20 | [Recall Hunter](ideas/2026-04-20-recall-hunter/PRD.md) | marketplace | ecommerce, automation, alerts, saas |

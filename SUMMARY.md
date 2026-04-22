@@ -166,3 +166,4 @@
 | 2026-04-19 | [Subcontractor Compliance Tracker](ideas/2026-04-19-subcontractor-compliance-tracker/PRD.md) | saas | construction, compliance, automation, b2b, productivity |
 | 2026-04-20 | [Recall Hunter](ideas/2026-04-20-recall-hunter/PRD.md) | marketplace | ecommerce, automation, alerts, saas |
 | 2026-04-21 | [Salvage Marketplace](ideas/2026-04-21-salvage-marketplace/PRD.md) | marketplace | trust, reclaimed materials, grading system, contractors, renovation |
+| 2026-04-22 | [Shielded](ideas/2026-04-22-shielded/PRD.md) | fintech | insurance, ai, b2b, automation |

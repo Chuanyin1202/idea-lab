@@ -167,3 +167,4 @@
 | 2026-04-20 | [Recall Hunter](ideas/2026-04-20-recall-hunter/PRD.md) | marketplace | ecommerce, automation, alerts, saas |
 | 2026-04-21 | [Salvage Marketplace](ideas/2026-04-21-salvage-marketplace/PRD.md) | marketplace | trust, reclaimed materials, grading system, contractors, renovation |
 | 2026-04-22 | [Shielded](ideas/2026-04-22-shielded/PRD.md) | fintech | insurance, ai, b2b, automation |
+| 2026-04-23 | [JobPost Intelligence](ideas/2026-04-23-jobpost-intelligence/PRD.md) | saas | b2b, sales, automation, analytics |

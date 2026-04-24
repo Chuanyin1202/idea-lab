@@ -168,3 +168,4 @@
 | 2026-04-21 | [Salvage Marketplace](ideas/2026-04-21-salvage-marketplace/PRD.md) | marketplace | trust, reclaimed materials, grading system, contractors, renovation |
 | 2026-04-22 | [Shielded](ideas/2026-04-22-shielded/PRD.md) | fintech | insurance, ai, b2b, automation |
 | 2026-04-23 | [JobPost Intelligence](ideas/2026-04-23-jobpost-intelligence/PRD.md) | saas | b2b, sales, automation, analytics |
+| 2026-04-24 | [Cariot](ideas/2026-04-24-cariot/PRD.md) | healthtech | transportation, senior, family, safety, app |

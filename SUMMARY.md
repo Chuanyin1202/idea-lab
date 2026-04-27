@@ -171,3 +171,4 @@
 | 2026-04-24 | [Cariot](ideas/2026-04-24-cariot/PRD.md) | healthtech | transportation, senior, family, safety, app |
 | 2026-04-25 | [Cariot](ideas/2026-04-25-cariot/PRD.md) | healthtech | transportation, senior, family, safety, app |
 | 2026-04-26 | [Nightlamp](ideas/2026-04-26-nightlamp/PRD.md) | saas | no-code, automation, monitoring, maintenance |
+| 2026-04-27 | [Meltworth](ideas/2026-04-27-meltworth/PRD.md) | marketplace | scrap-metal, pricing, transparency, mobile, contractors |

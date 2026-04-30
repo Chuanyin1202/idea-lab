@@ -174,3 +174,4 @@
 | 2026-04-27 | [Meltworth](ideas/2026-04-27-meltworth/PRD.md) | marketplace | scrap-metal, pricing, transparency, mobile, contractors |
 | 2026-04-28 | [VendorMark](ideas/2026-04-28-vendormark/PRD.md) | saas | mvp |
 | 2026-04-29 | [Crediva](ideas/2026-04-29-crediva/PRD.md) | saas | b2b, compliance, prospecting, automation |
+| 2026-04-30 | [Coderunner](ideas/2026-04-30-coderunner/PRD.md) | marketplace | gamification, ai, developer, leaderboard |

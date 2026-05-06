@@ -177,3 +177,4 @@
 | 2026-04-30 | [Coderunner](ideas/2026-04-30-coderunner/PRD.md) | marketplace | gamification, ai, developer, leaderboard |
 | 2026-05-01 | [Phonetree](ideas/2026-05-01-phonetree/PRD.md) | healthtech | ai, automation, b2b, productivity |
 | 2026-05-02 | [Phonetree](ideas/2026-05-02-phonetree/PRD.md) | healthtech | ai, automation, b2b, mobile, productivity |
+| 2026-05-06 | [Stitchframe](ideas/2026-05-06-stitchframe/PRD.md) | saas | ai, fashion, automation, marketplace |

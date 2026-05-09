@@ -180,3 +180,4 @@
 | 2026-05-06 | [Stitchframe](ideas/2026-05-06-stitchframe/PRD.md) | saas | ai, fashion, automation, marketplace |
 | 2026-05-07 | [CoverGrail](ideas/2026-05-07-covergrail/PRD.md) | saas | ai, comic, grading, analytics, automation |
 | 2026-05-08 | [Killswitch](ideas/2026-05-08-killswitch/PRD.md) | saas | coding, live-streaming, competition, community, engagement |
+| 2026-05-09 | [Statutepin](ideas/2026-05-09-statutepin/PRD.md) | saas | compliance, automation, b2b, hr, notifications |

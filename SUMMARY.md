@@ -181,3 +181,4 @@
 | 2026-05-07 | [CoverGrail](ideas/2026-05-07-covergrail/PRD.md) | saas | ai, comic, grading, analytics, automation |
 | 2026-05-08 | [Killswitch](ideas/2026-05-08-killswitch/PRD.md) | saas | coding, live-streaming, competition, community, engagement |
 | 2026-05-09 | [Statutepin](ideas/2026-05-09-statutepin/PRD.md) | saas | compliance, automation, b2b, hr, notifications |
+| 2026-05-10 | [Magpie](ideas/2026-05-10-magpie/PRD.md) | saas | ai, productivity, design, automation |

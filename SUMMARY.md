@@ -183,3 +183,4 @@
 | 2026-05-09 | [Statutepin](ideas/2026-05-09-statutepin/PRD.md) | saas | compliance, automation, b2b, hr, notifications |
 | 2026-05-10 | [Magpie](ideas/2026-05-10-magpie/PRD.md) | saas | ai, productivity, design, automation |
 | 2026-05-12 | [Availsync](ideas/2026-05-12-availsync/PRD.md) | saas | calendar, scheduling, api, automation, productivity |
+| 2026-05-14 | [Vesper](ideas/2026-05-14-vesper/PRD.md) | saas | voice, licensing, ai, creators, marketplace |

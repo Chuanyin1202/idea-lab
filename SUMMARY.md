@@ -184,3 +184,4 @@
 | 2026-05-10 | [Magpie](ideas/2026-05-10-magpie/PRD.md) | saas | ai, productivity, design, automation |
 | 2026-05-12 | [Availsync](ideas/2026-05-12-availsync/PRD.md) | saas | calendar, scheduling, api, automation, productivity |
 | 2026-05-14 | [Vesper](ideas/2026-05-14-vesper/PRD.md) | saas | voice, licensing, ai, creators, marketplace |
+| 2026-05-15 | [AgentKey](ideas/2026-05-15-agentkey/PRD.md) | saas | authentication, automation, b2b, security |

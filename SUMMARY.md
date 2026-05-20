@@ -189,3 +189,4 @@
 | 2026-05-17 | [Transom](ideas/2026-05-17-transom/PRD.md) | saas | real-estate, automation, crm, productivity, workflow |
 | 2026-05-19 | [WellRing](ideas/2026-05-19-wellring/PRD.md) | healthtech | ai, remote care, seniors, monitoring |
 | 2026-05-20 | [Plugpass](ideas/2026-05-20-plugpass/PRD.md) | saas | ai, security, productivity, browser-extension |
+| 2026-05-21 | [Creator Sponsorship Manager](ideas/2026-05-21-creator-sponsorship-manager/PRD.md) | saas | mvp |

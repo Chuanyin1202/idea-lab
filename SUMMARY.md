@@ -192,3 +192,4 @@
 | 2026-05-21 | [Creator Sponsorship Manager](ideas/2026-05-21-creator-sponsorship-manager/PRD.md) | saas | mvp |
 | 2026-05-22 | [Permacite](ideas/2026-05-22-permacite/PRD.md) | saas | citation, research, archiving, productivity |
 | 2026-05-23 | [Diligenca](ideas/2026-05-23-diligenca/PRD.md) | fintech | ai, automation, b2b, risk_management |
+| 2026-05-24 | [Hardhire](ideas/2026-05-24-hardhire/PRD.md) | saas | safety, contractor, review, compliance, marketplace |

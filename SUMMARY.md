@@ -193,3 +193,4 @@
 | 2026-05-22 | [Permacite](ideas/2026-05-22-permacite/PRD.md) | saas | citation, research, archiving, productivity |
 | 2026-05-23 | [Diligenca](ideas/2026-05-23-diligenca/PRD.md) | fintech | ai, automation, b2b, risk_management |
 | 2026-05-24 | [Hardhire](ideas/2026-05-24-hardhire/PRD.md) | saas | safety, contractor, review, compliance, marketplace |
+| 2026-05-26 | [Boxchive](ideas/2026-05-26-boxchive/PRD.md) | saas | ai, automation, document-management, mobile, small-business |

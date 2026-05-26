@@ -194,3 +194,4 @@
 | 2026-05-23 | [Diligenca](ideas/2026-05-23-diligenca/PRD.md) | fintech | ai, automation, b2b, risk_management |
 | 2026-05-24 | [Hardhire](ideas/2026-05-24-hardhire/PRD.md) | saas | safety, contractor, review, compliance, marketplace |
 | 2026-05-26 | [Boxchive](ideas/2026-05-26-boxchive/PRD.md) | saas | ai, automation, document-management, mobile, small-business |
+| 2026-05-27 | [Soldticker](ideas/2026-05-27-soldticker/PRD.md) | marketplace | pricing, analytics, chrome-extension, e-commerce |

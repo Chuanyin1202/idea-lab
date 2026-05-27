@@ -195,3 +195,4 @@
 | 2026-05-24 | [Hardhire](ideas/2026-05-24-hardhire/PRD.md) | saas | safety, contractor, review, compliance, marketplace |
 | 2026-05-26 | [Boxchive](ideas/2026-05-26-boxchive/PRD.md) | saas | ai, automation, document-management, mobile, small-business |
 | 2026-05-27 | [Soldticker](ideas/2026-05-27-soldticker/PRD.md) | marketplace | pricing, analytics, chrome-extension, e-commerce |
+| 2026-05-28 | [Rackmath](ideas/2026-05-28-rackmath/PRD.md) | saas | ai, data-center, finance, automation |

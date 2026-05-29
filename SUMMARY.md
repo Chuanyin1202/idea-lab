@@ -197,3 +197,4 @@
 | 2026-05-27 | [Soldticker](ideas/2026-05-27-soldticker/PRD.md) | marketplace | pricing, analytics, chrome-extension, e-commerce |
 | 2026-05-28 | [Rackmath](ideas/2026-05-28-rackmath/PRD.md) | saas | ai, data-center, finance, automation |
 | 2026-05-29 | [FirstWeeks](ideas/2026-05-29-firstweeks/PRD.md) | healthtech | mvp |
+| 2026-05-30 | [Densly](ideas/2026-05-30-densly/PRD.md) | healthtech | ai, health, mobile, analytics |

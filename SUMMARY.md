@@ -199,3 +199,4 @@
 | 2026-05-29 | [FirstWeeks](ideas/2026-05-29-firstweeks/PRD.md) | healthtech | mvp |
 | 2026-05-30 | [Densly](ideas/2026-05-30-densly/PRD.md) | healthtech | ai, health, mobile, analytics |
 | 2026-05-31 | [Replede](ideas/2026-05-31-replede/PRD.md) | saas | ai, lead-enrichment, chatbot, sales, automation |
+| 2026-06-02 | [Voxload](ideas/2026-06-02-voxload/PRD.md) | healthtech | voice, wellness, tracking, mobile, analytics |

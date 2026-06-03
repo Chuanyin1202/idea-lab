@@ -201,3 +201,4 @@
 | 2026-05-31 | [Replede](ideas/2026-05-31-replede/PRD.md) | saas | ai, lead-enrichment, chatbot, sales, automation |
 | 2026-06-02 | [Voxload](ideas/2026-06-02-voxload/PRD.md) | healthtech | voice, wellness, tracking, mobile, analytics |
 | 2026-06-03 | [Liftproof](ideas/2026-06-03-liftproof/PRD.md) | healthtech | ai, automation, b2b, mobile, assessment |
+| 2026-06-04 | [Business Closure Inventory Hunter](ideas/2026-06-04-business-closure-inventory-hunter/PRD.md) | marketplace | liquidation, alerts, b2b, mobile, automation |

@@ -205,3 +205,4 @@
 | 2026-06-05 | [Fmttr](ideas/2026-06-05-fmttr/PRD.md) | saas | markdown, content creation, automation, productivity |
 | 2026-06-06 | [Mendcurv](ideas/2026-06-06-mendcurv/PRD.md) | healthtech | recovery, mobile, analytics, healthcare, patient-support |
 | 2026-06-07 | [Chaplora](ideas/2026-06-07-chaplora/PRD.md) | saas | healthcare, productivity, operations, chaplaincy |
+| 2026-06-09 | [Attesta](ideas/2026-06-09-attesta/PRD.md) | saas | mvp |

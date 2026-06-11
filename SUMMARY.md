@@ -208,3 +208,4 @@
 | 2026-06-09 | [Attesta](ideas/2026-06-09-attesta/PRD.md) | saas | mvp |
 | 2026-06-10 | [Timbre](ideas/2026-06-10-timbre/PRD.md) | healthtech | voice-analysis, therapy, mobile, saas, healthcare |
 | 2026-06-11 | [Lotvue](ideas/2026-06-11-lotvue/PRD.md) | marketplace | real-estate, automation, b2c, analytics |
+| 2026-06-12 | [Trustwake](ideas/2026-06-12-trustwake/PRD.md) | fintech | estate planning, task management, automation, b2b, saas |

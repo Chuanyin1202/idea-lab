@@ -210,3 +210,4 @@
 | 2026-06-11 | [Lotvue](ideas/2026-06-11-lotvue/PRD.md) | marketplace | real-estate, automation, b2c, analytics |
 | 2026-06-12 | [Trustwake](ideas/2026-06-12-trustwake/PRD.md) | fintech | estate planning, task management, automation, b2b, saas |
 | 2026-06-13 | [Pepcheck](ideas/2026-06-13-pepcheck/PRD.md) | healthtech | comparison, telehealth, medication, marketplace |
+| 2026-06-14 | [Codewire](ideas/2026-06-14-codewire/PRD.md) | saas | electricians, productivity, mobile, compliance |

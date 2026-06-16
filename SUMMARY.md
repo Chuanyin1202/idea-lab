@@ -212,3 +212,4 @@
 | 2026-06-13 | [Pepcheck](ideas/2026-06-13-pepcheck/PRD.md) | healthtech | comparison, telehealth, medication, marketplace |
 | 2026-06-14 | [Codewire](ideas/2026-06-14-codewire/PRD.md) | saas | electricians, productivity, mobile, compliance |
 | 2026-06-16 | [Vindi](ideas/2026-06-16-vindi/PRD.md) | healthtech | symptom-tracking, women-health, analytics, mobile |
+| 2026-06-17 | [Capax](ideas/2026-06-17-capax/PRD.md) | healthtech | assessment, occupational health, mobile, automation, b2b |

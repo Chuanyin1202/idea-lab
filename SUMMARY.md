@@ -214,3 +214,4 @@
 | 2026-06-16 | [Vindi](ideas/2026-06-16-vindi/PRD.md) | healthtech | symptom-tracking, women-health, analytics, mobile |
 | 2026-06-17 | [Capax](ideas/2026-06-17-capax/PRD.md) | healthtech | assessment, occupational health, mobile, automation, b2b |
 | 2026-06-18 | [Answerspot](ideas/2026-06-18-answerspot/PRD.md) | saas | ai, local business, analytics, automation |
+| 2026-06-19 | [Actuarium](ideas/2026-06-19-actuarium/PRD.md) | fintech | insurance, calculator, decision-support, b2c |

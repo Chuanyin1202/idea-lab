@@ -217,3 +217,4 @@
 | 2026-06-19 | [Actuarium](ideas/2026-06-19-actuarium/PRD.md) | fintech | insurance, calculator, decision-support, b2c |
 | 2026-06-20 | [Donedial](ideas/2026-06-20-donedial/PRD.md) | healthtech | ai, automation, b2b, voice-assistant |
 | 2026-06-21 | [Unspin](ideas/2026-06-21-unspin/PRD.md) | healthtech | mobile, wellness, healthcare, saas |
+| 2026-06-23 | [QuantumSafe](ideas/2026-06-23-quantumsafe/PRD.md) | saas | security, encryption, compliance, automation |

@@ -219,3 +219,4 @@
 | 2026-06-21 | [Unspin](ideas/2026-06-21-unspin/PRD.md) | healthtech | mobile, wellness, healthcare, saas |
 | 2026-06-23 | [QuantumSafe](ideas/2026-06-23-quantumsafe/PRD.md) | saas | security, encryption, compliance, automation |
 | 2026-06-24 | [Sayso](ideas/2026-06-24-sayso/PRD.md) | saas | voice, automation, field-service, productivity |
+| 2026-06-26 | [GrantGuard](ideas/2026-06-26-grantguard/PRD.md) | edtech | saas, automation, b2b, student-support |

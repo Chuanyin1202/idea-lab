@@ -221,3 +221,4 @@
 | 2026-06-24 | [Sayso](ideas/2026-06-24-sayso/PRD.md) | saas | voice, automation, field-service, productivity |
 | 2026-06-26 | [GrantGuard](ideas/2026-06-26-grantguard/PRD.md) | edtech | saas, automation, b2b, student-support |
 | 2026-06-27 | [Klaxon](ideas/2026-06-27-klaxon/PRD.md) | saas | ai, safety, b2b, automation |
+| 2026-06-28 | [Handsel](ideas/2026-06-28-handsel/PRD.md) | marketplace | b2b, contracts, payments, creators |

@@ -223,3 +223,4 @@
 | 2026-06-27 | [Klaxon](ideas/2026-06-27-klaxon/PRD.md) | saas | ai, safety, b2b, automation |
 | 2026-06-28 | [Handsel](ideas/2026-06-28-handsel/PRD.md) | marketplace | b2b, contracts, payments, creators |
 | 2026-06-30 | [Trestle](ideas/2026-06-30-trestle/PRD.md) | saas | seo, ecommerce, automation, analytics |
+| 2026-07-01 | [AI Companion Safety Layer](ideas/2026-07-01-ai-companion-safety-layer/PRD.md) | saas | ai, safety, compliance, automation |

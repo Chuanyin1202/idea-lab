@@ -226,3 +226,4 @@
 | 2026-07-01 | [AI Companion Safety Layer](ideas/2026-07-01-ai-companion-safety-layer/PRD.md) | saas | ai, safety, compliance, automation |
 | 2026-07-02 | [Retinue](ideas/2026-07-02-retinue/PRD.md) | marketplace | membership, ecommerce, customer engagement, automation |
 | 2026-07-03 | [Cumula](ideas/2026-07-03-cumula/PRD.md) | edtech | digital wellness, education, analytics, b2b |
+| 2026-07-04 | [Madeproof](ideas/2026-07-04-madeproof/PRD.md) | saas | compliance, supply-chain, b2b, automation |

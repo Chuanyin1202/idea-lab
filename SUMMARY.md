@@ -228,3 +228,4 @@
 | 2026-07-03 | [Cumula](ideas/2026-07-03-cumula/PRD.md) | edtech | digital wellness, education, analytics, b2b |
 | 2026-07-04 | [Madeproof](ideas/2026-07-04-madeproof/PRD.md) | saas | compliance, supply-chain, b2b, automation |
 | 2026-07-05 | [Defeed](ideas/2026-07-05-defeed/PRD.md) | healthtech | addiction, recovery, group, accountability, saas |
+| 2026-07-07 | [Surepair](ideas/2026-07-07-surepair/PRD.md) | marketplace | ai, automation, b2b, mobile, project-management |

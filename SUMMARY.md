@@ -232,3 +232,4 @@
 | 2026-07-08 | [Tempkey](ideas/2026-07-08-tempkey/PRD.md) | saas | access management, security, productivity, small business |
 | 2026-07-10 | [Tactly](ideas/2026-07-10-tactly/PRD.md) | saas | automation, b2b, invoicing, finance |
 | 2026-07-11 | [Linehawk](ideas/2026-07-11-linehawk/PRD.md) | saas | ai, automation, food-safety, mobile |
+| 2026-07-12 | [Sayflow](ideas/2026-07-12-sayflow/PRD.md) | productivity | automation, voice, desktop, workflow |

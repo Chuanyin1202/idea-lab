@@ -234,3 +234,4 @@
 | 2026-07-11 | [Linehawk](ideas/2026-07-11-linehawk/PRD.md) | saas | ai, automation, food-safety, mobile |
 | 2026-07-12 | [Sayflow](ideas/2026-07-12-sayflow/PRD.md) | productivity | automation, voice, desktop, workflow |
 | 2026-07-14 | [Expecta](ideas/2026-07-14-expecta/PRD.md) | healthtech | ai, mobile, pregnancy, safety |
+| 2026-07-15 | [Marrymap](ideas/2026-07-15-marrymap/PRD.md) | saas | mvp |

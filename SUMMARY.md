@@ -235,3 +235,4 @@
 | 2026-07-12 | [Sayflow](ideas/2026-07-12-sayflow/PRD.md) | productivity | automation, voice, desktop, workflow |
 | 2026-07-14 | [Expecta](ideas/2026-07-14-expecta/PRD.md) | healthtech | ai, mobile, pregnancy, safety |
 | 2026-07-15 | [Marrymap](ideas/2026-07-15-marrymap/PRD.md) | saas | mvp |
+| 2026-07-16 | [Pearlmeter](ideas/2026-07-16-pearlmeter/PRD.md) | healthtech | teeth whitening, mobile, health, analytics |

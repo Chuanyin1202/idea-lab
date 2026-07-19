@@ -238,3 +238,4 @@
 | 2026-07-16 | [Pearlmeter](ideas/2026-07-16-pearlmeter/PRD.md) | healthtech | teeth whitening, mobile, health, analytics |
 | 2026-07-17 | [Pawscript](ideas/2026-07-17-pawscript/PRD.md) | healthtech | petcare, recovery, veterinary, automation, saas |
 | 2026-07-18 | [Servvo Connectors](ideas/2026-07-18-servvo-connectors/PRD.md) | saas | integration, ai, automation, b2b, productivity |
+| 2026-07-19 | [Keepsong](ideas/2026-07-19-keepsong/PRD.md) | healthtech | dementia, family, voice, storytelling, mobile |

@@ -240,3 +240,4 @@
 | 2026-07-18 | [Servvo Connectors](ideas/2026-07-18-servvo-connectors/PRD.md) | saas | integration, ai, automation, b2b, productivity |
 | 2026-07-19 | [Keepsong](ideas/2026-07-19-keepsong/PRD.md) | healthtech | dementia, family, voice, storytelling, mobile |
 | 2026-07-20 | [Winnow](ideas/2026-07-20-winnow/PRD.md) | fintech | automation, b2b, accounting, analytics |
+| 2026-07-21 | [Catchup](ideas/2026-07-21-catchup/PRD.md) | edtech | tutoring, automation, b2c, productivity |

@@ -243,3 +243,4 @@
 | 2026-07-21 | [Catchup](ideas/2026-07-21-catchup/PRD.md) | edtech | tutoring, automation, b2c, productivity |
 | 2026-07-22 | [Flexion](ideas/2026-07-22-flexion/PRD.md) | healthtech | telehealth, ai, healthcare, fitness, video |
 | 2026-07-23 | [GMBVault](ideas/2026-07-23-gmbvault/PRD.md) | saas | backup, automation, b2b, localbusiness |
+| 2026-07-24 | [Benchcraft](ideas/2026-07-24-benchcraft/PRD.md) | marketplace | partnership, construction, legal, compliance, equity |

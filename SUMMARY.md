@@ -244,3 +244,4 @@
 | 2026-07-22 | [Flexion](ideas/2026-07-22-flexion/PRD.md) | healthtech | telehealth, ai, healthcare, fitness, video |
 | 2026-07-23 | [GMBVault](ideas/2026-07-23-gmbvault/PRD.md) | saas | backup, automation, b2b, localbusiness |
 | 2026-07-24 | [Benchcraft](ideas/2026-07-24-benchcraft/PRD.md) | marketplace | partnership, construction, legal, compliance, equity |
+| 2026-07-25 | [Offpage](ideas/2026-07-25-offpage/PRD.md) | saas | content, marketing, automation, b2b |

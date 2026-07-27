@@ -246,3 +246,4 @@
 | 2026-07-24 | [Benchcraft](ideas/2026-07-24-benchcraft/PRD.md) | marketplace | partnership, construction, legal, compliance, equity |
 | 2026-07-25 | [Offpage](ideas/2026-07-25-offpage/PRD.md) | saas | content, marketing, automation, b2b |
 | 2026-07-26 | [SafeRoom](ideas/2026-07-26-saferoom/PRD.md) | saas | ai, automation, development, security |
+| 2026-07-27 | [Lullalog](ideas/2026-07-27-lullalog/PRD.md) | healthtech | baby tracking, voice recognition, parenting, privacy, analytics |
